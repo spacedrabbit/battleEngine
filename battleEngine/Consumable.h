@@ -8,6 +8,12 @@
 
 #import "Item.h"
 
+@protocol Consumbable <NSObject>
+
+- (void) use: (Unit *) unit;
+
+@end
+
 @interface Consumable : Item
 
 @end

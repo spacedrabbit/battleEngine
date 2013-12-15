@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Unit.h"
 
 @interface Item : NSObject
 
