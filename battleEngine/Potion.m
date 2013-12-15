@@ -21,10 +21,13 @@
     }
     return self;
 }
-
 - (id)init
 {
     return [self initPotion:0 withType:0 ];
 }
+- (void)use: (Unit *) unit {
+    
+}
+
 
 @end
