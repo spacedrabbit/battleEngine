@@ -21,6 +21,19 @@
 		14A3E9AB185D26AA00B62004 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3E98D185D26AA00B62004 /* UIKit.framework */; };
 		14A3E9B3185D26AA00B62004 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9B1185D26AA00B62004 /* InfoPlist.strings */; };
 		14A3E9B5185D26AA00B62004 /* battleEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A3E9B4185D26AA00B62004 /* battleEngineTests.m */; };
+		14A3E9C7185D3E6B00B62004 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9BF185D3E6B00B62004 /* background.png */; };
+		14A3E9C8185D3E6B00B62004 /* knight-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9C0185D3E6B00B62004 /* knight-03.png */; };
+		14A3E9C9185D3E6B00B62004 /* mindflayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9C1185D3E6B00B62004 /* mindflayer.png */; };
+		14A3E9CA185D3E6B00B62004 /* rogue.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9C2185D3E6B00B62004 /* rogue.png */; };
+		14A3E9CB185D3E6B00B62004 /* text box-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9C3185D3E6B00B62004 /* text box-03.png */; };
+		14A3E9CC185D3E6B00B62004 /* treant-03.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9C4185D3E6B00B62004 /* treant-03.png */; };
+		14A3E9CD185D3E6B00B62004 /* WaterSprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9C5185D3E6B00B62004 /* WaterSprite.png */; };
+		14A3E9CE185D3E6B00B62004 /* wizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9C6185D3E6B00B62004 /* wizard.png */; };
+		14A3E9D0185D3F3C00B62004 /* background-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9CF185D3F3C00B62004 /* background-iphone.png */; };
+		14A3E9D2185D417400B62004 /* text box-iphone copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9D1185D417400B62004 /* text box-iphone copy.png */; };
+		14CA772E185D45720003E8D0 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA772D185D45720003E8D0 /* Unit.m */; };
+		14CA7731185D459A0003E8D0 /* Skills.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7730185D459A0003E8D0 /* Skills.m */; };
+		14CA7734185D45AD0003E8D0 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7733185D45AD0003E8D0 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +66,22 @@
 		14A3E9B0185D26AA00B62004 /* battleEngineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "battleEngineTests-Info.plist"; sourceTree = "<group>"; };
 		14A3E9B2185D26AA00B62004 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		14A3E9B4185D26AA00B62004 /* battleEngineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = battleEngineTests.m; sourceTree = "<group>"; };
+		14A3E9BF185D3E6B00B62004 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		14A3E9C0185D3E6B00B62004 /* knight-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knight-03.png"; sourceTree = "<group>"; };
+		14A3E9C1185D3E6B00B62004 /* mindflayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mindflayer.png; sourceTree = "<group>"; };
+		14A3E9C2185D3E6B00B62004 /* rogue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rogue.png; sourceTree = "<group>"; };
+		14A3E9C3185D3E6B00B62004 /* text box-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text box-03.png"; sourceTree = "<group>"; };
+		14A3E9C4185D3E6B00B62004 /* treant-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treant-03.png"; sourceTree = "<group>"; };
+		14A3E9C5185D3E6B00B62004 /* WaterSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WaterSprite.png; sourceTree = "<group>"; };
+		14A3E9C6185D3E6B00B62004 /* wizard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard.png; sourceTree = "<group>"; };
+		14A3E9CF185D3F3C00B62004 /* background-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-iphone.png"; sourceTree = "<group>"; };
+		14A3E9D1185D417400B62004 /* text box-iphone copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text box-iphone copy.png"; sourceTree = "<group>"; };
+		14CA772C185D45720003E8D0 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		14CA772D185D45720003E8D0 /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
+		14CA772F185D459A0003E8D0 /* Skills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skills.h; sourceTree = "<group>"; };
+		14CA7730185D459A0003E8D0 /* Skills.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skills.m; sourceTree = "<group>"; };
+		14CA7732185D45AD0003E8D0 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		14CA7733185D45AD0003E8D0 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +141,16 @@
 		14A3E98F185D26AA00B62004 /* battleEngine */ = {
 			isa = PBXGroup;
 			children = (
-				14A3E998185D26AA00B62004 /* betaDetroitAppDelegate.h */,
-				14A3E999185D26AA00B62004 /* betaDetroitAppDelegate.m */,
 				14A3E99B185D26AA00B62004 /* Main.storyboard */,
 				14A3E99E185D26AA00B62004 /* betaDetroitViewController.h */,
 				14A3E99F185D26AA00B62004 /* betaDetroitViewController.m */,
+				14CA7735185D45BA0003E8D0 /* Units */,
+				14CA7736185D45C20003E8D0 /* Skills */,
+				14CA7737185D45CA0003E8D0 /* Items */,
 				14A3E9A1185D26AA00B62004 /* Images.xcassets */,
+				14A3E9BE185D3E6B00B62004 /* Images */,
+				14A3E998185D26AA00B62004 /* betaDetroitAppDelegate.h */,
+				14A3E999185D26AA00B62004 /* betaDetroitAppDelegate.m */,
 				14A3E990185D26AA00B62004 /* Supporting Files */,
 			);
 			path = battleEngine;
@@ -150,6 +183,50 @@
 				14A3E9B1185D26AA00B62004 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14A3E9BE185D3E6B00B62004 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				14A3E9D1185D417400B62004 /* text box-iphone copy.png */,
+				14A3E9CF185D3F3C00B62004 /* background-iphone.png */,
+				14A3E9BF185D3E6B00B62004 /* background.png */,
+				14A3E9C0185D3E6B00B62004 /* knight-03.png */,
+				14A3E9C1185D3E6B00B62004 /* mindflayer.png */,
+				14A3E9C2185D3E6B00B62004 /* rogue.png */,
+				14A3E9C3185D3E6B00B62004 /* text box-03.png */,
+				14A3E9C4185D3E6B00B62004 /* treant-03.png */,
+				14A3E9C5185D3E6B00B62004 /* WaterSprite.png */,
+				14A3E9C6185D3E6B00B62004 /* wizard.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		14CA7735185D45BA0003E8D0 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				14CA772C185D45720003E8D0 /* Unit.h */,
+				14CA772D185D45720003E8D0 /* Unit.m */,
+			);
+			name = Units;
+			sourceTree = "<group>";
+		};
+		14CA7736185D45C20003E8D0 /* Skills */ = {
+			isa = PBXGroup;
+			children = (
+				14CA772F185D459A0003E8D0 /* Skills.h */,
+				14CA7730185D459A0003E8D0 /* Skills.m */,
+			);
+			name = Skills;
+			sourceTree = "<group>";
+		};
+		14CA7737185D45CA0003E8D0 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				14CA7732185D45AD0003E8D0 /* Item.h */,
+				14CA7733185D45AD0003E8D0 /* Item.m */,
+			);
+			name = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +306,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A3E9D0185D3F3C00B62004 /* background-iphone.png in Resources */,
+				14A3E9CE185D3E6B00B62004 /* wizard.png in Resources */,
+				14A3E9CD185D3E6B00B62004 /* WaterSprite.png in Resources */,
+				14A3E9CB185D3E6B00B62004 /* text box-03.png in Resources */,
+				14A3E9D2185D417400B62004 /* text box-iphone copy.png in Resources */,
 				14A3E9A2185D26AA00B62004 /* Images.xcassets in Resources */,
+				14A3E9C8185D3E6B00B62004 /* knight-03.png in Resources */,
+				14A3E9CC185D3E6B00B62004 /* treant-03.png in Resources */,
+				14A3E9C7185D3E6B00B62004 /* background.png in Resources */,
 				14A3E994185D26AA00B62004 /* InfoPlist.strings in Resources */,
+				14A3E9CA185D3E6B00B62004 /* rogue.png in Resources */,
+				14A3E9C9185D3E6B00B62004 /* mindflayer.png in Resources */,
 				14A3E99D185D26AA00B62004 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,9 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CA7734185D45AD0003E8D0 /* Item.m in Sources */,
 				14A3E9A0185D26AA00B62004 /* betaDetroitViewController.m in Sources */,
+				14CA772E185D45720003E8D0 /* Unit.m in Sources */,
 				14A3E99A185D26AA00B62004 /* betaDetroitAppDelegate.m in Sources */,
 				14A3E996185D26AA00B62004 /* main.m in Sources */,
+				14CA7731185D459A0003E8D0 /* Skills.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +551,7 @@
 				14A3E9BA185D26AA00B62004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14A3E9BB185D26AA00B62004 /* Build configuration list for PBXNativeTarget "battleEngineTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +560,7 @@
 				14A3E9BD185D26AA00B62004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
