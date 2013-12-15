@@ -41,26 +41,3 @@
 // magicDefense max per level:
 
 
-/* 
-
--(void)attackPlayer:(Character *)f;
-{
-    int critChance = arc4random()%99+1;
-    if (critChance <= 25) {
-        if (self.attackPower >30) {
-            NSLog(@"Critical hard!");
-            if (f.defensePower >= self.attackPower) {
-                f.healthPoints = f.healthPoints-(1*critChance);
-                NSLog(@"Defense is too great");
-            } else {
-                if (self.attackPower >30) {
-                    int atkMod = arc4random()%10+1;
-                    f.healthPoints= (f.healthPoints +f.defensePower)-(self.attackPower*atkMod);
-                    NSLog(@"Crit damage for %i", (self.attackPower*atkMod)-f.defensePower);
-                } else {
-                    int atkMod2 = arc4random()%5+1;
-                    f.healthPoints = (f.healthPoints +f.defensePower)-(self.attackPower*atkMod2);
-                    NSLog(@"Crit damage for %i", (self.attackPower*atkMod2)-f.defensePower);
-                }
-            }
-*/
