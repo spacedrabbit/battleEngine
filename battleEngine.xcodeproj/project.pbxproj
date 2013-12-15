@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		14566D59185D4BC0000A00A2 /* Consumable.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D58185D4BC0000A00A2 /* Consumable.m */; };
 		14566D5C185D4C0B000A00A2 /* Potion.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D5B185D4C0B000A00A2 /* Potion.m */; };
+		14566D5F185D60CE000A00A2 /* Sword.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D5E185D60CE000A00A2 /* Sword.m */; };
+		14566D62185D61F3000A00A2 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D61185D61F3000A00A2 /* Container.m */; };
 		14A3E98A185D26AA00B62004 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3E989185D26AA00B62004 /* Foundation.framework */; };
 		14A3E98C185D26AA00B62004 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3E98B185D26AA00B62004 /* CoreGraphics.framework */; };
 		14A3E98E185D26AA00B62004 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3E98D185D26AA00B62004 /* UIKit.framework */; };
@@ -53,6 +55,10 @@
 		14566D58185D4BC0000A00A2 /* Consumable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consumable.m; sourceTree = "<group>"; };
 		14566D5A185D4C0B000A00A2 /* Potion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Potion.h; sourceTree = "<group>"; };
 		14566D5B185D4C0B000A00A2 /* Potion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Potion.m; sourceTree = "<group>"; };
+		14566D5D185D60CE000A00A2 /* Sword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sword.h; sourceTree = "<group>"; };
+		14566D5E185D60CE000A00A2 /* Sword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sword.m; sourceTree = "<group>"; };
+		14566D60185D61F3000A00A2 /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
+		14566D61185D61F3000A00A2 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Container.m; sourceTree = "<group>"; };
 		14A3E986185D26AA00B62004 /* battleEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = battleEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A3E989185D26AA00B62004 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14A3E98B185D26AA00B62004 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -231,8 +237,12 @@
 			children = (
 				14CA7732185D45AD0003E8D0 /* Item.h */,
 				14CA7733185D45AD0003E8D0 /* Item.m */,
+				14566D5D185D60CE000A00A2 /* Sword.h */,
+				14566D5E185D60CE000A00A2 /* Sword.m */,
 				14566D5A185D4C0B000A00A2 /* Potion.h */,
 				14566D5B185D4C0B000A00A2 /* Potion.m */,
+				14566D60185D61F3000A00A2 /* Container.h */,
+				14566D61185D61F3000A00A2 /* Container.m */,
 				14566D57185D4BC0000A00A2 /* Consumable.h */,
 				14566D58185D4BC0000A00A2 /* Consumable.m */,
 			);
@@ -350,7 +360,9 @@
 				14CA7734185D45AD0003E8D0 /* Item.m in Sources */,
 				14A3E9A0185D26AA00B62004 /* betaDetroitViewController.m in Sources */,
 				14CA772E185D45720003E8D0 /* Unit.m in Sources */,
+				14566D5F185D60CE000A00A2 /* Sword.m in Sources */,
 				14566D59185D4BC0000A00A2 /* Consumable.m in Sources */,
+				14566D62185D61F3000A00A2 /* Container.m in Sources */,
 				14566D5C185D4C0B000A00A2 /* Potion.m in Sources */,
 				14A3E99A185D26AA00B62004 /* betaDetroitAppDelegate.m in Sources */,
 				14A3E996185D26AA00B62004 /* main.m in Sources */,
