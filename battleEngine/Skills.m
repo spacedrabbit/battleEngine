@@ -20,10 +20,9 @@
 -(void)fireball:(Unit *)f
 {
     int critMultiplier = arc4random()%5;
-    f.healthPoints = (f.healthPoints  + f.magicDefense) - (self.magicPower + 10 * critMultiplier);
-    self.manaPoints = self.manaPoints - 20;
-    
     if (critMultiplier > 0) {
+        f.healthPoints = (f.healthPoints  + f.magicDefense) - (self.magicPower + 10 * critMultiplier * self.level);
+        self.manaPoints = self.manaPoints - 20;
         NSLog(@"Fireball does %u damage", (self.magicPower + 10 * critMultiplier));
     } else {
         NSLog(@"Your fireball fizzled");
@@ -33,33 +32,49 @@
 
 -(void)disarm:(Unit *)f
 {
-    f.attackPower = f.attackPower - (self.attackPower / 5);
-    f.healthPoints = f.healthPoints - (self.attackPower / 10);
-    NSLog(@"You disarm your opponent dealing %u damage and reducing their attack power by %u", (self.attackPower / 10), (self.attackPower / 5));
+    int missChance = arc4random()%100+1;
+    if (missChance > 25) {
+        f.attackPower = f.attackPower - (self.attackPower / 5 + self.level);
+        f.healthPoints = f.healthPoints - (self.attackPower / 2);
+        NSLog(@"You disarm your opponent dealing %u damage and reducing their attack power by %u", (self.attackPower / 2), (self.attackPower / 5 + self.level));
+    } else {
+        NSLog(@"You fail to disarm your opponent!");
+    }
 }
 
 -(void)bullRush:(Unit *)f
 {
-    f.defensePower = f.defensePower - (self.attackPower / 5);
-    f.healthPoints = f.healthPoints - (self.attackPower / 10);
-    NSLog(@"You bull rush your opponent dealing %u damage and reducing their defense power by %u", (self.attackPower / 10), (self.attackPower / 5));
+    int missChance = arc4random()%100+1;
+    if (missChance > 25) {
+        f.defensePower = f.defensePower - (self.attackPower / 5 + self.level);
+        f.healthPoints = f.healthPoints - (self.attackPower / 2);
+        NSLog(@"You bull rush your opponent dealing %u damage and reducing their defense power by %u", (self.attackPower / 2), (self.attackPower / 5 + self.level));
+    } else {
+        NSLog(@"Your bull rush misses");
+    }
 }
 
 -(void)dirtyTrick:(Unit *)f
 {
-    f.magicPower = f.magicPower - 5 * self.level;
-    f.attackPower = f.attackPower - 5 * self.level;
-    f.defensePower = f.defensePower - 5 * self.level;
-    f.healthPoints = f.healthPoints -  (5 * self.level);
-    NSLog(@"Sh-sh-SHA! POCKET SAND! You reduce your opponents magic power, attack power, and defense by %u", (5 * self.level));
+    int missChance = arc4random()%100+1;
+    if (missChance > 25) {
+        f.magicPower = f.magicPower - 5 * self.level;
+        f.attackPower = f.attackPower - 5 * self.level;
+        f.defensePower = f.defensePower - 5 * self.level;
+        f.healthPoints = f.healthPoints -  5 * self.level;
+        NSLog(@"SHASHASHAA!!! POCKET SAND! You reduce your opponents magic power, attack power, and defense by %u", (5 * self.level));
+    } else {
+        NSLog(@"Your gerbil screwed you, there is no pocket sand");
+    }
 }
 
 -(void)backstab:(Unit *)f
 {
-    int critMultiplier = arc4random()%5 + self.level;
-    f.healthPoints = f.healthPoints - (self.attackPower/2)*critMultiplier;
-    if (critMultiplier > 0) {
-        NSLog(@"You backstab your opponent dealing %u damage",(self.attackPower/2)*critMultiplier);
+    int missChance = arc4random()%100+1;
+    if (missChance > 20) {
+        int critMultiplier = arc4random()%5 + self.level;
+        f.healthPoints = f.healthPoints - (self.attackPower/2) * critMultiplier;
+        NSLog(@"You backstab your opponent dealing %u damage",(self.attackPower/2) * critMultiplier);
     } else {
         NSLog(@"You attempted to backstab your opponent but missed");
     }
