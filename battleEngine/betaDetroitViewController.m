@@ -7,6 +7,7 @@
 //
 
 #import "betaDetroitViewController.h"
+#import "Potion.h"
 
 @interface betaDetroitViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *attackButton;
@@ -25,6 +26,9 @@
 - (IBAction)healButton:(UIButton *)sender {
 }
 - (IBAction)inventoryButton:(UIButton *)sender {
+    Potion * healthPot = [[Potion alloc] initPotion:2 withType:0];
+    NSLog(@"%@", healthPot.name);
+    self.combatTextBox.text = healthPot.name;
 }
 
 - (void)viewDidLoad
