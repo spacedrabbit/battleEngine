@@ -15,6 +15,12 @@
 @property (nonatomic) NSUInteger resellPrice;
 @property (nonatomic) NSUInteger stackSize;//set to 0 no stack
 
+typedef enum statGuide {
+                        Health = 1,
+                        Mana = 2,
+                        Defense = 3
+} statGuide;
+
 @property (nonatomic, strong, setter = uniqueName:) NSString * name;
 
 + (NSArray *) weaponWordBank;

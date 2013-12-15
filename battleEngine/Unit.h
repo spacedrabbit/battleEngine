@@ -10,7 +10,7 @@
 
 @interface Unit : NSObject
 
-@property (nonatomic) NSUInteger healthPoints;
+//@property (nonatomic) NSUInteger healthPoints;
 
 @property NSUInteger healthPoints;
 @property NSUInteger manaPoints;

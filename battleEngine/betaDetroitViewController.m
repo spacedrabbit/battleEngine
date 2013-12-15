@@ -26,7 +26,7 @@
 - (IBAction)healButton:(UIButton *)sender {
 }
 - (IBAction)inventoryButton:(UIButton *)sender {
-    Potion * healthPot = [[Potion alloc] initPotion:2 withType:0];
+    Potion * healthPot = [[Potion alloc] initPotion:1 withType:0];
     NSLog(@"%@", healthPot.name);
     self.combatTextBox.text = healthPot.name;
 }
