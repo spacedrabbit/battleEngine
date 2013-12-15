@@ -8,11 +8,11 @@
 
 #import "Consumable.h"
 
-@interface Potion : Consumable
+@interface Potion : Consumable <Consumbable>
 
 @property (nonatomic) NSString * potionSize;
 @property (nonatomic) NSString * potionType;
+@property (nonatomic, strong) NSMutableDictionary * properties;
 
 - (Potion *) initPotion: (NSInteger) size withType: (NSInteger) potionType;
-
 @end
