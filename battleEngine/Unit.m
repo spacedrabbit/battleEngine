@@ -34,29 +34,29 @@
 
 -(void)makeWarrior:(Unit *)f
 {
-    int minMana = 20;
-    int maxMana = 40;
-    int randomMana = (arc4random()%(maxMana-minMana))+minMana;
+    long minMana = 20;
+    long maxMana = 40;
+    long randomMana = (arc4random()%(maxMana-minMana))+minMana;
     
-    int minHp = 190;
-    int maxHp = 250;
-    int randomHp = (arc4random()%(maxHp-minHp))+minHp;
+    long minHp = 190;
+    long maxHp = 250;
+    long randomHp = (arc4random()%(maxHp-minHp))+minHp;
     
-    int minAtk = 25;
-    int maxAtk = 35;
-    int randomAtk = (arc4random()%(maxAtk-minAtk))+minAtk;
+    long minAtk = 25;
+    long maxAtk = 35;
+    long randomAtk = (arc4random()%(maxAtk-minAtk))+minAtk;
     
-    int minDef = 45;
-    int maxDef = 60;
-    int randomDef = (arc4random()%(maxDef -minDef))+minDef;
+    long minDef = 45;
+    long maxDef = 60;
+    long randomDef = (arc4random()%(maxDef -minDef))+minDef;
     
-    int minMagA = 10;
-    int maxMagA = 25;
-    int randomMagA = (arc4random()%(maxMagA - minMagA))+minMagA;
+    long minMagA = 10;
+    long maxMagA = 25;
+    long randomMagA = (arc4random()%(maxMagA - minMagA))+minMagA;
     
-    int minMr = 15;
-    int maxMr = 30;
-    int randomMr = (arc4random()%(maxMr -minMr))+minMr;
+    long minMr = 15;
+    long maxMr = 30;
+    long randomMr = (arc4random()%(maxMr -minMr))+minMr;
     
     [f setUnitStatsHealth:randomHp Mana:randomMana AttackPower:randomAtk Defense:randomDef MagicPwr:randomMagA MagicResist:randomMr];
     
