@@ -36,6 +36,7 @@
 		14CA772E185D45720003E8D0 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA772D185D45720003E8D0 /* Unit.m */; };
 		14CA7731185D459A0003E8D0 /* Skills.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7730185D459A0003E8D0 /* Skills.m */; };
 		14CA7734185D45AD0003E8D0 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7733185D45AD0003E8D0 /* Item.m */; };
+		3E94F04C185D676F001464F6 /* MonstersNPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E94F04B185D676F001464F6 /* MonstersNPC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		14CA7730185D459A0003E8D0 /* Skills.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skills.m; sourceTree = "<group>"; };
 		14CA7732185D45AD0003E8D0 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		14CA7733185D45AD0003E8D0 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		3E94F04A185D676E001464F6 /* MonstersNPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonstersNPC.h; sourceTree = "<group>"; };
+		3E94F04B185D676F001464F6 /* MonstersNPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonstersNPC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,8 @@
 			children = (
 				14CA772C185D45720003E8D0 /* Unit.h */,
 				14CA772D185D45720003E8D0 /* Unit.m */,
+				3E94F04A185D676E001464F6 /* MonstersNPC.h */,
+				3E94F04B185D676F001464F6 /* MonstersNPC.m */,
 			);
 			name = Units;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				14A3E9A0185D26AA00B62004 /* betaDetroitViewController.m in Sources */,
 				14CA772E185D45720003E8D0 /* Unit.m in Sources */,
 				14566D59185D4BC0000A00A2 /* Consumable.m in Sources */,
+				3E94F04C185D676F001464F6 /* MonstersNPC.m in Sources */,
 				14566D5C185D4C0B000A00A2 /* Potion.m in Sources */,
 				14A3E99A185D26AA00B62004 /* betaDetroitAppDelegate.m in Sources */,
 				14A3E996185D26AA00B62004 /* main.m in Sources */,

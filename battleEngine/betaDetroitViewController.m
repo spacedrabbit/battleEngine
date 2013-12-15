@@ -8,6 +8,8 @@
 
 #import "betaDetroitViewController.h"
 #import "Potion.h"
+#import "Unit.h"
+#import "Skills.h"
 
 @interface betaDetroitViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *attackButton;
@@ -22,6 +24,7 @@
 
 @implementation betaDetroitViewController
 - (IBAction)attackButton:(UIButton *)sender {
+    
 }
 - (IBAction)healButton:(UIButton *)sender {
 }
