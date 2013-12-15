@@ -14,9 +14,9 @@
     
     self = [super init];
     if (self) {
-        _potionType = [[Item type] objectAtIndex:type];
-        _potionSize = [[Item sizes] objectAtIndex:size];
-        NSString * name = [NSString stringWithFormat:@"%@ %@Potion", _potionType, _potionSize];
+        _potionType = type;//[[Item type] objectAtIndex:type];
+        _potionSize = size;//[[Item sizes] objectAtIndex:size];
+        NSString * name = [NSString stringWithFormat:@"%@ %@Potion", [[Item type] objectAtIndex:size], [[Item sizes] objectAtIndex:type]];
         [self uniqueName:name];
     }
     return self;
@@ -27,6 +27,7 @@
 }
 - (void)use: (Unit *) unit {
     
+    unit.healthPoints += 100;
 }
 
 

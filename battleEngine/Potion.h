@@ -10,9 +10,11 @@
 
 @interface Potion : Consumable <Consumbable>
 
-@property (nonatomic) NSString * potionSize;
-@property (nonatomic) NSString * potionType;
+@property (nonatomic) NSInteger potionSize;
+@property (nonatomic) NSInteger potionType;
 @property (nonatomic, strong) NSMutableDictionary * properties;
 
 - (Potion *) initPotion: (NSInteger) size withType: (NSInteger) potionType;
+
+- (NSInteger) hitPoints;
 @end
