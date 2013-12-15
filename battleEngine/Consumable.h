@@ -1,15 +1,13 @@
 //
-//  Unit.h
+//  Consumable.h
 //  battleEngine
 //
 //  Created by Louis Tur on 12/14/13.
 //  Copyright (c) 2013 Louis Tur. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Item.h"
 
-@interface Unit : NSObject
-
-@property (nonatomic) NSUInteger healthPoints;
+@interface Consumable : Item
 
 @end
