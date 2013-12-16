@@ -15,10 +15,13 @@
 @property (nonatomic) NSUInteger resellPrice;
 @property (nonatomic) NSUInteger stackSize;//set to 0 no stack
 
+/* Created a typedef enum to correspond to the NSArray of possible item types
+  Later, this enum is used to determine the type of potion when useItemOn: is called. 
+ */
 typedef enum statGuide {
-                        Health = 1,
-                        Mana = 2,
-                        Defense = 3
+                        Health = 0,
+                        Mana = 1,
+                        Defense = 2
 } statGuide;
 
 @property (nonatomic, strong, setter = uniqueName:) NSString * name;

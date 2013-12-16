@@ -9,14 +9,15 @@
 #import "Item.h"
 
 @interface Container : Item
-@property (nonatomic, readonly) NSUInteger slotSize;
+
+@property (nonatomic) int slotSize;
 @property (nonatomic, strong) NSString * materialType;
-@property (nonatomic, strong) NSMutableDictionary *bagContents;
+@property (nonatomic, strong) NSCountedSet *bagContents;
 
 - (NSUInteger) bagSize;
-- (id) initBagWith: (NSUInteger) material withSlots: (NSUInteger) numOfSlots;
-- (NSNumber *) removeItemFromBag: (NSString *) item;
-- (void) addItemToBag: (Item *) item howMany: (NSUInteger) quantity;
-- (void) addItemToBag: (Item *) item;
+- (id) initBagWith: (NSUInteger) material withSlots: (int) numOfSlots;
+- (BOOL) removeItemFromBag: (Item *) item;
+- (BOOL) addItemToBag: (Item *) item;
+- (NSString *) displayBag;
 
 @end

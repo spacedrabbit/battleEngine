@@ -10,7 +10,7 @@
 
 @protocol Consumbable <NSObject>
 
-- (void) use: (Unit *) unit;
+- (void) useItemOn: (Unit *) unit;
 
 @end
 
