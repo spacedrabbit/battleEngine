@@ -39,7 +39,7 @@
 - (IBAction)warriorChoice:(id)sender {
     _player = [[Unit alloc]init];
     [_player generateWarrior];
-    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", _player.healthPoints, _player.manaPoints,_player.attackPower, _player.defensePower, _player.magicPower, _player.magicDefense);
+    [_player listStats];
    
     
 }
@@ -47,14 +47,14 @@
 - (IBAction)mageChoice:(id)sender {
     _player = [[Unit alloc]init];
     [_player generateMage];
-    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", _player.healthPoints, _player.manaPoints,_player.attackPower, _player.defensePower, _player.magicPower, _player.magicDefense);
+    [_player listStats];
 
 }
 
 - (IBAction)rogueChoice:(id)sender {
     _player = [[Unit alloc]init];
     [_player generateRogue];
-    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", _player.healthPoints, _player.manaPoints,_player.attackPower, _player.defensePower, _player.magicPower, _player.magicDefense);
+    [_player listStats];
    
 }
 
@@ -73,23 +73,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Unit *player = [[Unit alloc]init];
-    
-
-    Skills *player = [[Skills alloc]init];
-    [player generateMage];
-    [player listStats];
+    Creatures *player = [[Creatures alloc]init];
     Creatures *monster = [[Creatures alloc]init];
+    [player generateWarrior];
     [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelOne];
-    [monster listStats];
     
-    [player magicMissle:monster];
-    NSLog(@"Monster HP: %lu", monster.healthPoints);
+    [player listStats];
+    [player encounterExperience:monster];
+    [player levelUp];
+    [player listStats];
+    [player encounterExperience:monster];
+    [player levelUp];
+    [player listStats];
+    [player encounterExperience:monster];
+    [player levelUp];
+    [player listStats];
+    [player encounterExperience:monster];
+    [player levelUp];
+    [player listStats];
+    [player encounterExperience:monster];
+    [player levelUp];
+    [player listStats];
+    [player encounterExperience:monster];
+    [player levelUp];
+    [player listStats];
+    [player encounterExperience:monster];
+    [player levelUp];
+    [player listStats];
+    [player encounterExperience:monster];
+    [player levelUp];
     
-   
-
+    
 }
 
 - (void)didReceiveMemoryWarning
