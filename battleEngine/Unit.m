@@ -19,6 +19,10 @@
     _magicPower = magicP;
     _magicDefense = MagicDef;
 }
+-(void)listStats
+{
+    NSLog(@"Stats: \n HP: %lu, \n MP: %lu, \n AttackPower:%lu, \n Defense: %lu, \n MagicPower: %lu, \n MagicDefense:%lu", self.healthPoints, self.manaPoints, self.attackPower, self.defensePower, self.magicPower, self.magicDefense);
+}
 
 -(void)levelUp
 {

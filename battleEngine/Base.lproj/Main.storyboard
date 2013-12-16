@@ -78,6 +78,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="biD-JK-zPO"/>
                                     <action selector="warriorChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HH2-nA-A45"/>
                                 </connections>
                             </button>
@@ -90,6 +91,7 @@
                                 </state>
                                 <connections>
                                     <action selector="mageChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="v1t-8f-eqM"/>
+                                    <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="913-Gl-qjr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dd-pz-qlM">
@@ -101,6 +103,7 @@
                                 </state>
                                 <connections>
                                     <action selector="rogueChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N0z-OB-aLy"/>
+                                    <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1gQ-Vn-Ggr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,8 +114,11 @@
                         <outlet property="combatTextBox" destination="v3X-wN-lHc" id="fvh-7r-1fd"/>
                         <outlet property="healButton" destination="WPl-tm-GIA" id="SEa-fR-Nv0"/>
                         <outlet property="inventoryButton" destination="Ia7-cR-QfD" id="C1M-5t-Jf4"/>
+                        <outlet property="mageChoice" destination="3CS-nM-KVU" id="QBP-Cd-kWm"/>
+                        <outlet property="rogueChoice" destination="3dd-pz-qlM" id="YyG-ZP-gfZ"/>
                         <outlet property="unitSlot1" destination="fh0-K3-4uu" id="gjX-6o-9am"/>
                         <outlet property="unitSlot2" destination="950-n4-wU0" id="vVY-Zr-aQr"/>
+                        <outlet property="warriorChoice" destination="Aw3-Ua-MtJ" id="3tp-Ab-UB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

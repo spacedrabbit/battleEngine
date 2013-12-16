@@ -26,6 +26,7 @@
 -(void) setUnitStatsHealth:(NSUInteger)Hp Mana:(NSUInteger)Mp AttackPower:(NSUInteger)Atk Defense:(NSUInteger)Def MagicPwr:(NSUInteger)magicP MagicResist:(NSUInteger)MagicDef;
 
 -(void)levelUp;
+-(void)listStats;
 
 -(void)generateWarrior;
 -(void)generateMage;

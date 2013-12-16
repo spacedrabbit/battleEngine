@@ -10,6 +10,7 @@
 #import "Potion.h"
 #import "Unit.h"
 #import "Creatures.h"
+#import "Skills.h"
 //#import "MonstersNPC.h"
 
 @interface betaDetroitViewController ()
@@ -22,27 +23,44 @@
 @property (strong, nonatomic) IBOutlet UIButton *mageChoice;
 @property (strong, nonatomic) IBOutlet UIButton *warriorChoice;
 @property (strong, nonatomic) IBOutlet UIButton *rogueChoice;
-
+@property (strong, nonatomic) Unit *player;
 @end
 
 @implementation betaDetroitViewController
 
 
 
-- (IBAction)warriorChoice:(id)sender {
-    Unit *player = [[Unit alloc]init];
-    [player generateWarrior];
-    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", player.healthPoints, player.manaPoints,player.attackPower, player.defensePower, player.magicPower, player.magicDefense);
-    [sender setHidden:YES];
-    }
-- (IBAction)mageChoice:(id)sender {
+-(IBAction)setButtonHidden{
+    _mageChoice.hidden = TRUE;
+    _warriorChoice.hidden =TRUE;
+    _rogueChoice.hidden=TRUE;
 }
+
+- (IBAction)warriorChoice:(id)sender {
+    _player = [[Unit alloc]init];
+    [_player generateWarrior];
+    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", _player.healthPoints, _player.manaPoints,_player.attackPower, _player.defensePower, _player.magicPower, _player.magicDefense);
+   
+    
+}
+
+- (IBAction)mageChoice:(id)sender {
+    _player = [[Unit alloc]init];
+    [_player generateMage];
+    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", _player.healthPoints, _player.manaPoints,_player.attackPower, _player.defensePower, _player.magicPower, _player.magicDefense);
+
+}
+
 - (IBAction)rogueChoice:(id)sender {
+    _player = [[Unit alloc]init];
+    [_player generateRogue];
+    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", _player.healthPoints, _player.manaPoints,_player.attackPower, _player.defensePower, _player.magicPower, _player.magicDefense);
+   
 }
 
 
 - (IBAction)attackButton:(UIButton *)sender {
-    
+
 }
 - (IBAction)healButton:(UIButton *)sender {
 }
@@ -55,13 +73,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    Unit *player = [[Unit alloc]init];
-    [player generateMage];
-    [player generateWarrior];
-    [player generateRogue];
+    //Unit *player = [[Unit alloc]init];
+    
 
+    Skills *player = [[Skills alloc]init];
+    [player generateMage];
+    [player listStats];
     Creatures *monster = [[Creatures alloc]init];
     [monster generateRandomMonster];
+    [monster listStats];
+    [monster CompensateLevelOne];
+    [monster listStats];
+    
+    [player magicMissle:monster];
+    NSLog(@"Monster HP: %lu", monster.healthPoints);
+    
+   
 
 }
 

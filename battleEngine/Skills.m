@@ -10,13 +10,14 @@
 
 @implementation Skills
 
-int healthMultiplier = .15; // multiplier to scale damage
 
 -(void)magicMissle:(Unit *)f
 {
-    f.healthPoints = (f.healthPoints + f.magicDefense) - (f.healthPoints * healthMultiplier + self.magicPower) - (2 * self.level);
+    //int healthMultiplier = .15; // multiplier to scale damage
+
+    f.healthPoints = (f.healthPoints + f.magicDefense) - (f.healthPoints * 0.15);
     self.manaPoints = self.manaPoints - 10;
-    NSLog(@"Magic Missle does %u damage",(15 + self.magicPower) - (2 * self.level));
+    NSLog(@"Magic Missle does %lu damage",(15 + self.magicPower) - (2 * self.level));
 }
 
 -(void)fireball:(Unit *)f
@@ -25,7 +26,7 @@ int healthMultiplier = .15; // multiplier to scale damage
     if (critMultiplier > 0) {
         f.healthPoints = (f.healthPoints  + f.magicDefense) - (self.magicPower + 10 * critMultiplier * self.level);
         self.manaPoints = self.manaPoints - 20;
-        NSLog(@"Fireball does %u damage", (self.magicPower + 10 * critMultiplier));
+        NSLog(@"Fireball does %lu damage", (self.magicPower + 10 * critMultiplier));
     } else {
         NSLog(@"Your fireball fizzled");
     }
@@ -38,7 +39,7 @@ int healthMultiplier = .15; // multiplier to scale damage
     if (missChance > 25) {
         f.attackPower = f.attackPower - (self.attackPower / 5 + self.level);
         f.healthPoints = f.healthPoints - (self.attackPower / 2);
-        NSLog(@"You disarm your opponent dealing %u damage and reducing their attack power by %u", (self.attackPower / 2), (self.attackPower / 5 + self.level));
+        NSLog(@"You disarm your opponent dealing %lu damage and reducing their attack power by %lu", (self.attackPower / 2), (self.attackPower / 5 + self.level));
     } else {
         NSLog(@"You fail to disarm your opponent!");
     }
@@ -50,7 +51,7 @@ int healthMultiplier = .15; // multiplier to scale damage
     if (missChance > 25) {
         f.defensePower = f.defensePower - (self.attackPower / 5 + self.level);
         f.healthPoints = f.healthPoints - (self.attackPower / 2);
-        NSLog(@"You bull rush your opponent dealing %u damage and reducing their defense power by %u", (self.attackPower / 2), (self.attackPower / 5 + self.level));
+        NSLog(@"You bull rush your opponent dealing %lu damage and reducing their defense power by %lu", (self.attackPower / 2), (self.attackPower / 5 + self.level));
     } else {
         NSLog(@"Your bull rush misses");
     }
@@ -64,7 +65,7 @@ int healthMultiplier = .15; // multiplier to scale damage
         f.attackPower = f.attackPower - 5 * self.level;
         f.defensePower = f.defensePower - 5 * self.level;
         f.healthPoints = f.healthPoints -  5 * self.level;
-        NSLog(@"SHASHASHAA!!! POCKET SAND! You reduce your opponents magic power, attack power, and defense by %u", (5 * self.level));
+        NSLog(@"SHASHASHAA!!! POCKET SAND! You reduce your opponents magic power, attack power, and defense by %lu", (5 * self.level));
     } else {
         NSLog(@"Your gerbil screwed you, there is no pocket sand");
     }
@@ -76,7 +77,7 @@ int healthMultiplier = .15; // multiplier to scale damage
     if (missChance > 20) {
         int critMultiplier = arc4random()%5 + self.level;
         f.healthPoints = f.healthPoints - (self.attackPower/2) * critMultiplier;
-        NSLog(@"You backstab your opponent dealing %u damage",(self.attackPower/2) * critMultiplier);
+        NSLog(@"You backstab your opponent dealing %lu damage",(self.attackPower/2) * critMultiplier);
     } else {
         NSLog(@"You attempted to backstab your opponent but missed");
     }
