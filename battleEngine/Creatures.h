@@ -14,5 +14,9 @@
 -(void)generateRandomMonster;
 -(void)encounterExperience: (Unit *)f;
 -(void)CompensateLevelOne;
+-(void)CompensateLevelTwo;
+-(void)CompensateLevelThree;
+-(void)CompensateLevelFour;
+-(void)CompensateLevelFive;
 
 @end

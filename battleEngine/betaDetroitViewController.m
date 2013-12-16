@@ -78,30 +78,26 @@
     [player generateWarrior];
     [monster generateRandomMonster];
     
-    [player listStats];
-    [player encounterExperience:monster];
-    [player levelUp];
-    [player listStats];
-    [player encounterExperience:monster];
-    [player levelUp];
-    [player listStats];
-    [player encounterExperience:monster];
-    [player levelUp];
-    [player listStats];
-    [player encounterExperience:monster];
-    [player levelUp];
-    [player listStats];
-    [player encounterExperience:monster];
-    [player levelUp];
-    [player listStats];
-    [player encounterExperience:monster];
-    [player levelUp];
-    [player listStats];
-    [player encounterExperience:monster];
-    [player levelUp];
-    [player listStats];
-    [player encounterExperience:monster];
-    [player levelUp];
+    [monster CompensateLevelOne];
+    [monster listStats];
+    [monster generateRandomMonster];
+    [monster listStats];
+    [monster CompensateLevelTwo];
+    [monster listStats];
+    [monster generateRandomMonster];
+    [monster listStats];
+    [monster CompensateLevelThree];
+    [monster listStats];
+    [monster generateRandomMonster];
+    [monster listStats];
+    [monster CompensateLevelFour];
+    [monster listStats];
+    [monster generateRandomMonster];
+    [monster listStats];
+    [monster CompensateLevelFive];
+    [monster listStats];
+
+    
     
     
 }
