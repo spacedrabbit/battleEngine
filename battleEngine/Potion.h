@@ -15,6 +15,6 @@
 @property (nonatomic, strong) NSMutableDictionary * properties;
 
 - (Potion *) initPotion: (NSInteger) size withType: (NSInteger) potionType;
-
-- (NSInteger) hitPoints;
+- (void) useItemOn:(Unit *)unit;
+- (NSUInteger) changeStatsUpper: (NSUInteger) upperBound andLower: (NSUInteger) lowerBound;
 @end

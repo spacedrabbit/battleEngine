@@ -21,11 +21,11 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="tintColor" red="1" green="0.60522500483003761" blue="0.64110744489667393" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wizard.png" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-K3-4uu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-K3-4uu">
                                 <rect key="frame" x="41" y="226" width="74" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WaterSprite.png" translatesAutoresizingMaskIntoConstraints="NO" id="950-n4-wU0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="950-n4-wU0">
                                 <rect key="frame" x="193" y="259" width="105" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -71,15 +71,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw3-Ua-MtJ">
-                                <rect key="frame" x="62" y="130" width="50" height="30"/>
+                                <rect key="frame" x="65" y="130" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Warrior">
                                     <color key="titleColor" red="0.88022248641304346" green="0.14338928909658061" blue="0.060623131551107073" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="biD-JK-zPO"/>
-                                    <action selector="warriorChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HH2-nA-A45"/>
+                                    <action selector="warriorChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wDv-md-Kb5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CS-nM-KVU">
@@ -106,30 +105,53 @@
                                     <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1gQ-Vn-Ggr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fc-sS-YTk">
+                                <rect key="frame" x="145" y="130" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Mage">
+                                    <color key="titleColor" red="1" green="0.60522500479999997" blue="0.64110744490000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mageChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yKQ-AD-bF9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ym-ko-6kD">
+                                <rect key="frame" x="218" y="130" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rogue">
+                                    <color key="titleColor" red="0.95845129419999997" green="1" blue="0.1828721905" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rogueChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lwy-6Q-eat"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="attackButton" destination="9Ae-0V-vgP" id="uKK-ex-VQD"/>
                         <outlet property="combatTextBox" destination="v3X-wN-lHc" id="fvh-7r-1fd"/>
+                        <outlet property="enemySlot1" destination="950-n4-wU0" id="lbK-u3-7P5"/>
                         <outlet property="healButton" destination="WPl-tm-GIA" id="SEa-fR-Nv0"/>
                         <outlet property="inventoryButton" destination="Ia7-cR-QfD" id="C1M-5t-Jf4"/>
-                        <outlet property="mageChoice" destination="3CS-nM-KVU" id="QBP-Cd-kWm"/>
-                        <outlet property="rogueChoice" destination="3dd-pz-qlM" id="YyG-ZP-gfZ"/>
+                        <outlet property="mageChoice" destination="3CS-nM-KVU" id="haZ-38-3HN"/>
+                        <outlet property="playerSlot1" destination="fh0-K3-4uu" id="452-Dc-acV"/>
+                        <outlet property="rogueChoice" destination="3dd-pz-qlM" id="63o-B6-ZKj"/>
                         <outlet property="unitSlot1" destination="fh0-K3-4uu" id="gjX-6o-9am"/>
                         <outlet property="unitSlot2" destination="950-n4-wU0" id="vVY-Zr-aQr"/>
-                        <outlet property="warriorChoice" destination="Aw3-Ua-MtJ" id="3tp-Ab-UB9"/>
+                        <outlet property="warriorChoice" destination="Aw3-Ua-MtJ" id="c6G-BV-Rwy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mDV-tl-vQz"/>
             </objects>
         </scene>
     </scenes>
     <resources>
-        <image name="WaterSprite.png" width="2592" height="2838"/>
         <image name="background-iphone.png" width="328" height="500"/>
         <image name="text box-iphone copy.png" width="640" height="286"/>
-        <image name="wizard.png" width="1700" height="3600"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

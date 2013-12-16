@@ -10,6 +10,8 @@
 
 @interface Unit : NSObject
 
+@property (nonatomic) NSUInteger maxHealthPoints;
+
 @property (nonatomic) NSUInteger healthPoints;
 @property (nonatomic) NSUInteger manaPoints;
 @property (nonatomic) NSUInteger attackPower;

@@ -10,26 +10,19 @@
 
 /* I chose to make slotSize only accesible from within the object (and without a setter) because the slotSize should only ever be 1 value, set at instantiation.
  */
-@interface Container()
-
-@property (nonatomic, readwrite) NSUInteger slotSize;
-
-
-@end
 
 @implementation Container
 
 - (NSUInteger)bagSize{
-    return self.slotSize;
+    return (long)self.slotSize;
 }
 
-- (id)initBagWith:(NSUInteger)material withSlots:(NSUInteger)numOfSlots {
-
+- (id)initBagWith:(NSUInteger)material withSlots:(int)numOfSlots {
     self = [super init];
     if (self) {
         _slotSize = numOfSlots;
         _materialType = [[Container bagMaterials] objectAtIndex:material];
-        _bagContents = [NSMutableDictionary dictionary];
+        _bagContents = [NSCountedSet set];
         self.stackSize = 0;
     }
     return self;
@@ -38,37 +31,38 @@
     return [self initBagWith:1 withSlots:6];
 }
 
-- (void)addItemToBag:(Item *)obj howMany:(NSUInteger)quantity{
+- (BOOL)addItemToBag:(Item *)item {
+    NSLog(@"%i, %@, %lu", self.slotSize, item.name, [self.bagContents count] );
+    if ( self.bagSize > [self.bagContents count] ){
+        [self.bagContents addObject:item];
+        return TRUE;
+    }
+    else
+        return FALSE;
+    return TRUE;
+}
+
+-(BOOL)removeItemFromBag:(Item *) item {
     
-    if ( [self.bagContents objectForKey:obj.name] ){
-        NSNumber *myNum = [self.bagContents objectForKey:obj.name];
-        long i = [myNum integerValue] + quantity;
-        [self.bagContents setObject:[NSNumber numberWithLong:i] forKey:obj.name];
-    }else{
-        [self.bagContents setObject:@1 forKey:obj.name];
+    if ([self.bagContents countForObject:item] > 0) {
+        [self.bagContents removeObject:item];
+        return TRUE;
+    }
+    else{
+        return FALSE;
     }
 }
 
--(void)addItemToBag:(Item *)item{
-    [self addItemToBag:item howMany:1];
-}
-
--(NSNumber *)removeItemFromBag:(NSString *)item{
+-(NSString *)displayBag{
     
-    long stock;
-    // this checks the # of a particular item in the dictionary
-    if( (stock = [[self.bagContents objectForKey:item] integerValue]) ){
-        if ( stock > 1 ){//not last one in stock, so must decrement
-            NSNumber *newCount = [NSNumber numberWithLong:--stock];
-            // newCount is one less of the stackable item object
-            [self.bagContents setObject:newCount forKey:item];
-            return newCount;
-        }else{
-            return @1;
-        }
+    NSMutableArray * bag = [NSMutableArray arrayWithArray:[self.bagContents allObjects]];
+    NSMutableString * bagContains = [NSMutableString string];
+    
+    for (Item * content in bag){
+        NSLog(@"Contents: %@", content.name);
+        [bagContains appendFormat:@"%@\n", content.name];
     }
-                    
-    return  @0;
+    return bagContains;
 }
 
 @end

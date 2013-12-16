@@ -27,7 +27,7 @@
 }
 
 + (NSArray *) type {
-    return @[@"Heatlh",@"Mana",@"Defense"];
+    return @[@"Health",@"Mana",@"Defense"];
 }
 
 @end
