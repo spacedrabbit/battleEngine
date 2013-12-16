@@ -19,13 +19,14 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="background-iphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="CwV-g7-1ZZ">
                                 <rect key="frame" x="0.0" y="0.0" width="328" height="640"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <color key="tintColor" red="1" green="0.60522500483003761" blue="0.64110744489667393" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-K3-4uu">
-                                <rect key="frame" x="45" y="256" width="78" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wizard.png" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-K3-4uu">
+                                <rect key="frame" x="41" y="226" width="74" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="950-n4-wU0">
-                                <rect key="frame" x="205" y="259" width="81" height="125"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WaterSprite.png" translatesAutoresizingMaskIntoConstraints="NO" id="950-n4-wU0">
+                                <rect key="frame" x="193" y="259" width="105" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="text box-iphone copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="oOc-SL-wzA">
@@ -69,6 +70,39 @@
                                     <action selector="inventoryButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ggf-e4-FSN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw3-Ua-MtJ">
+                                <rect key="frame" x="62" y="130" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Warrior">
+                                    <color key="titleColor" red="0.88022248641304346" green="0.14338928909658061" blue="0.060623131551107073" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="warriorChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HH2-nA-A45"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CS-nM-KVU">
+                                <rect key="frame" x="145" y="130" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Mage">
+                                    <color key="titleColor" red="1" green="0.60522500479999997" blue="0.64110744490000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mageChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="v1t-8f-eqM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dd-pz-qlM">
+                                <rect key="frame" x="218" y="130" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rogue">
+                                    <color key="titleColor" red="0.95845129423526587" green="1" blue="0.18287219049072112" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rogueChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N0z-OB-aLy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -86,8 +120,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="WaterSprite.png" width="2592" height="2838"/>
         <image name="background-iphone.png" width="328" height="500"/>
         <image name="text box-iphone copy.png" width="640" height="286"/>
+        <image name="wizard.png" width="1700" height="3600"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

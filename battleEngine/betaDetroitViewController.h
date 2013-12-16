@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MonstersNPC.h"
+
 
 @interface betaDetroitViewController : UIViewController
 

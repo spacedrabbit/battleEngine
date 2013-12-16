@@ -1,32 +1,32 @@
 //
-//  MonstersNPC.m
+//  Creatures.m
 //  battleEngine
 //
-//  Created by Paul Park on 12/14/13.
+//  Created by Paul Park on 12/15/13.
 //  Copyright (c) 2013 Louis Tur. All rights reserved.
 //
 
-#import "MonstersNPC.h"
+#import "Creatures.h"
 
 
-@implementation MonstersNPC
-/*
--(void) generateRandomMonster
+@implementation Creatures
+
+-(void)generateRandomMonster
 {
     int randomMonsterClass = arc4random()%3+1;
     if (randomMonsterClass == 1) {
-        [self generateWarrior:self];
+        [self generateWarrior];
     } else if (randomMonsterClass == 2) {
-        [self generateMage:self];
+        [self generateMage];
     } else {
-        [self generateRogue:self];
+        [self generateRogue];
     }
-    
+
 }
 
 -(void)encounterExperience:(Unit *)f
 {
-
+    
     self.experiencePoints = self.experiencePoints +(f.healthPoints + f.manaPoints + f.attackPower + f.defensePower + f.magicDefense + f.magicPower)/2.25;
 }
 
@@ -38,7 +38,6 @@
     self.defensePower = self.defensePower - (self.defensePower*0.75);
     self.magicPower = self.magicPower - (self.magicPower *0.75);
     self.magicDefense = self.magicDefense - (self.magicDefense*0.75);
-}*/
-
+}
 
 @end

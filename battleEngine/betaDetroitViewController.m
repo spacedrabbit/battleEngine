@@ -17,12 +17,29 @@
 @property (strong, nonatomic) IBOutlet UIButton *inventoryButton;
 @property (strong, nonatomic) IBOutlet UIImageView *unitSlot1;
 @property (strong, nonatomic) IBOutlet UIImageView *unitSlot2;
-
 @property (strong, nonatomic) IBOutlet UITextView *combatTextBox;
+@property (strong, nonatomic) IBOutlet UIButton *mageChoice;
+@property (strong, nonatomic) IBOutlet UIButton *warriorChoice;
+@property (strong, nonatomic) IBOutlet UIButton *rogueChoice;
 
 @end
 
 @implementation betaDetroitViewController
+
+
+
+- (IBAction)warriorChoice:(id)sender {
+    Unit *player = [[Unit alloc]init];
+    [player generateWarrior];
+    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", player.healthPoints, player.manaPoints,player.attackPower, player.defensePower, player.magicPower, player.magicDefense);
+    [sender setHidden:YES];
+    }
+- (IBAction)mageChoice:(id)sender {
+}
+- (IBAction)rogueChoice:(id)sender {
+}
+
+
 - (IBAction)attackButton:(UIButton *)sender {
     
 }
@@ -76,5 +93,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
