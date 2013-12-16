@@ -156,7 +156,7 @@
     return self;
 }
 
--(void)generateWarrior:(Unit *)f;
+-(void)generateWarrior;
 
 {
     
@@ -184,13 +184,13 @@
     long maxMr = 30;
     long randomMr = (arc4random()%(maxMr -minMr))+minMr;
     
-    [f setUnitStatsHealth:randomHp Mana:randomMana AttackPower:randomAtk Defense:randomDef MagicPwr:randomMagA MagicResist:randomMr];
+    [self setUnitStatsHealth:randomHp Mana:randomMana AttackPower:randomAtk Defense:randomDef MagicPwr:randomMagA MagicResist:randomMr];
     
     
 }
 
 
--(void)generateMage:(Unit *)f;
+-(void)generateMage;
 {
     long minMana = 80;
     long maxMana = 100;
@@ -216,12 +216,12 @@
     long maxMr = 50;
     long randomMr = (arc4random()%(maxMr -minMr))+minMr;
     
-    [f setUnitStatsHealth:randomHp Mana:randomMana AttackPower:randomAtk Defense:randomDef MagicPwr:randomMagA MagicResist:randomMr];
+    [self setUnitStatsHealth:randomHp Mana:randomMana AttackPower:randomAtk Defense:randomDef MagicPwr:randomMagA MagicResist:randomMr];
 
     
 }
 
--(void)generateRogue:(Unit *)f
+-(void)generateRogue;
 {
     long minMana = 80;
     long maxMana = 100;
@@ -247,7 +247,7 @@
     long maxMr = 40;
     long randomMr = (arc4random()%(maxMr -minMr))+minMr;
     
-    [f setUnitStatsHealth:randomHp Mana:randomMana AttackPower:randomAtk Defense:randomDef MagicPwr:randomMagA MagicResist:randomMr];
+    [self setUnitStatsHealth:randomHp Mana:randomMana AttackPower:randomAtk Defense:randomDef MagicPwr:randomMagA MagicResist:randomMr];
     
 
 }

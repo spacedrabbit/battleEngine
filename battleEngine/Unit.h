@@ -27,9 +27,9 @@
 
 -(void)levelUp;
 
--(void)generateWarrior:(Unit *)f;
--(void)generateMage:(Unit *)f;
--(void)generateRogue:(Unit *)f;
+-(void)generateWarrior;
+-(void)generateMage;
+-(void)generateRogue;
 
 
 - (id)initWarriorWithStats:(NSString*)name;
