@@ -10,24 +10,30 @@
 
 @interface Unit : NSObject
 
-//@property (nonatomic) NSUInteger healthPoints;
-
-@property NSUInteger healthPoints;
-@property NSUInteger manaPoints;
-@property NSUInteger attackPower;
-@property NSUInteger defensePower;
-@property NSUInteger magicPower;
-@property NSUInteger magicDefense;
-@property NSUInteger experiencePoints;
-@property NSUInteger level;
+@property (nonatomic) NSUInteger healthPoints;
+@property (nonatomic) NSUInteger manaPoints;
+@property (nonatomic) NSUInteger attackPower;
+@property (nonatomic) NSUInteger defensePower;
+@property (nonatomic) NSUInteger magicPower;
+@property (nonatomic) NSUInteger magicDefense;
+@property (nonatomic) NSUInteger experiencePoints;
+@property (nonatomic) NSUInteger level;
 @property (nonatomic, strong)Unit *warrior;
+@property (nonatomic, strong)Unit *mage;
+@property (nonatomic, strong)Unit *rogue;
 
 
 -(void) setUnitStatsHealth:(NSUInteger)Hp Mana:(NSUInteger)Mp AttackPower:(NSUInteger)Atk Defense:(NSUInteger)Def MagicPwr:(NSUInteger)magicP MagicResist:(NSUInteger)MagicDef;
 
 -(void)levelUp;
 
--(void)makeWarrior:(Unit *)f;
+-(void)generateWarrior:(Unit *)f;
+-(void)generateMage:(Unit *)f;
+-(void)generateRogue:(Unit *)f;
 
+
+- (id)initWarriorWithStats:(NSString*)name;
+- (id)initMageWithStats:(NSString*)name;
+- (id)initRogueWithStats:(NSString*)name;
 
 @end

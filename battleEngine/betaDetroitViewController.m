@@ -24,6 +24,7 @@
 
 @implementation betaDetroitViewController
 - (IBAction)attackButton:(UIButton *)sender {
+    
 }
 - (IBAction)healButton:(UIButton *)sender {
 }
