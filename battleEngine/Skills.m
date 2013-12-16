@@ -10,16 +10,18 @@
 
 @implementation Skills
 
+int healthMultiplier = .15; // multiplier to scale damage
+
 -(void)magicMissle:(Unit *)f
 {
-    f.healthPoints = (f.healthPoints + f.magicDefense) - (15 + self.magicPower) - (2 * self.level);
+    f.healthPoints = (f.healthPoints + f.magicDefense) - (f.healthPoints * healthMultiplier + self.magicPower) - (2 * self.level);
     self.manaPoints = self.manaPoints - 10;
     NSLog(@"Magic Missle does %u damage",(15 + self.magicPower) - (2 * self.level));
 }
 
 -(void)fireball:(Unit *)f
 {
-    int critMultiplier = arc4random()%5;
+    int critMultiplier = arc4random()%5; // 20% fizzle chance
     if (critMultiplier > 0) {
         f.healthPoints = (f.healthPoints  + f.magicDefense) - (self.magicPower + 10 * critMultiplier * self.level);
         self.manaPoints = self.manaPoints - 20;
