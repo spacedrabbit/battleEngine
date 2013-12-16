@@ -25,9 +25,11 @@
 @property (nonatomic, strong)Unit *rogue;
 
 
--(void) setUnitStatsHealth:(NSUInteger)Hp Mana:(NSUInteger)Mp AttackPower:(NSUInteger)Atk Defense:(NSUInteger)Def MagicPwr:(NSUInteger)magicP MagicResist:(NSUInteger)MagicDef;
+-(void) setUnitStatsHealth:(NSUInteger)Hp Mana:(NSUInteger)Mp AttackPower:(NSUInteger)Atk Defense:(NSUInteger)Def MagicPwr:(NSUInteger)magicP MagicResist:(NSUInteger)MagicDef EXP:(NSUInteger)Exp Level:(NSUInteger)lvl;
 
 -(void)levelUp;
+
+-(void)listStats;
 
 -(void)generateWarrior;
 -(void)generateMage;

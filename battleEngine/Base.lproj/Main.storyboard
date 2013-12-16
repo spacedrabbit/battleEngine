@@ -90,6 +90,7 @@
                                 </state>
                                 <connections>
                                     <action selector="mageChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="v1t-8f-eqM"/>
+                                    <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="913-Gl-qjr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dd-pz-qlM">
@@ -101,6 +102,7 @@
                                 </state>
                                 <connections>
                                     <action selector="rogueChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N0z-OB-aLy"/>
+                                    <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1gQ-Vn-Ggr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fc-sS-YTk">

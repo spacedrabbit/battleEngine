@@ -39,6 +39,12 @@
     return _player;
 }
 
+-(IBAction)setButtonHidden{
+    _mageChoice.hidden = TRUE;
+    _warriorChoice.hidden =TRUE;
+    _rogueChoice.hidden=TRUE;
+}
+
 - (IBAction)warriorChoice:(id)sender {
     [self.player generateWarrior];
     [_playerSlot1 setImage:[UIImage imageNamed:@"knight-03.png"]];
@@ -52,6 +58,7 @@
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
 
 }
+
 - (IBAction)rogueChoice:(id)sender {
     [self.player generateRogue];
     [_playerSlot1 setImage:[UIImage imageNamed:@"rogue.png"]];
@@ -60,7 +67,7 @@
 
 
 - (IBAction)attackButton:(UIButton *)sender {
-    
+
 }
 - (IBAction)healButton:(UIButton *)sender {
 }

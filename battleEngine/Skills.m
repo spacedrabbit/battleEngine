@@ -10,11 +10,12 @@
 
 @implementation Skills
 
-int healthMultiplier = .15; // multiplier to scale damage
 
 -(void)magicMissle:(Unit *)f
 {
-    f.healthPoints = (f.healthPoints + f.magicDefense) - (f.healthPoints * healthMultiplier + self.magicPower) - (2 * self.level);
+    //int healthMultiplier = .15; // multiplier to scale damage
+
+    f.healthPoints = (f.healthPoints + f.magicDefense) - (f.healthPoints * 0.15);
     self.manaPoints = self.manaPoints - 10;
     NSLog(@"Magic Missle does %lu damage",(15 + self.magicPower) - (2 * self.level));
 }
