@@ -27,11 +27,15 @@
 {
     return [self initPotion:0 withType:0 ];
 }
+
 - (void) useItemOn: (Unit *) unit {
     //Acts upon the unit passed in, and action is based on the unit being passed in.
-    NSLog(@"THe potion type is: %li", self.potionType);
+    NSLog(@"THe potion type is: %@", [[Item type] objectAtIndex:self.potionType]);
+    
     if ( self.potionType == Health ) {
-        unit.healthPoints += 100;
+        //checks to see if resulting health is greater than max health and if it is, it sets player hitpoints to max hitpoints
+        NSUInteger val = [self changeStatsUpper:75 andLower:75];
+        ( (unit.healthPoints + val) > unit.maxHealthPoints ) ? (unit.healthPoints = unit.maxHealthPoints) : (unit.healthPoints += val);
     }
     else if (self.potionType == Mana ){
         unit.manaPoints += 100;
@@ -41,6 +45,15 @@
     }
     else
         NSLog(@"Unknow potion type, error");
+}
+
+- (NSUInteger) changeStatsUpper: (NSUInteger) upperBound andLower: (NSUInteger) lowerBound {
+    
+    NSUInteger stat = arc4random_uniform((int)upperBound)+ lowerBound;
+    NSLog(@"Heals for: %lu", stat);
+    
+    return stat;
+    
 }
 
 @end

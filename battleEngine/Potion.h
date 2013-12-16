@@ -16,4 +16,5 @@
 
 - (Potion *) initPotion: (NSInteger) size withType: (NSInteger) potionType;
 - (void) useItemOn:(Unit *)unit;
+- (NSUInteger) changeStatsUpper: (NSUInteger) upperBound andLower: (NSUInteger) lowerBound;
 @end

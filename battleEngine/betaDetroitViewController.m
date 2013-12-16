@@ -10,6 +10,7 @@
 #import "Potion.h"
 #import "Container.h"
 #import "Sword.h"
+#import "Skills.h"
 
 @interface betaDetroitViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *attackButton;
@@ -21,22 +22,40 @@
 @property (strong, nonatomic) IBOutlet UIButton *mageChoice;
 @property (strong, nonatomic) IBOutlet UIButton *warriorChoice;
 @property (strong, nonatomic) IBOutlet UIButton *rogueChoice;
+@property (strong, nonatomic) Unit * player;
+@property (strong, nonatomic) IBOutlet UIImageView *playerSlot1;
+@property (strong, nonatomic) IBOutlet UIImageView *enemySlot1;
+@property (strong, nonatomic) IBOutlet UIScrollView *buttonScrollView;
+@property (strong, nonatomic) IBOutlet UITableView *inventoryView;
 
 @end
 
 @implementation betaDetroitViewController
 
-
+- (Unit *)player {
+    if (!_player){
+        _player = [[Unit alloc] init];
+    }
+    return _player;
+}
 
 - (IBAction)warriorChoice:(id)sender {
-    Unit *player = [[Unit alloc]init];
-    [player generateWarrior];
-    NSLog(@"HP: %lu, MP: %lu, Atk: %lu, Def: %lu, MagicAtk: %lu, MagicDef:%lu", player.healthPoints, player.manaPoints,player.attackPower, player.defensePower, player.magicPower, player.magicDefense);
-    [sender setHidden:YES];
+    [self.player generateWarrior];
+    [_playerSlot1 setImage:[UIImage imageNamed:@"knight-03.png"]];
+    [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    //[self disableClassButtons];
+    
     }
 - (IBAction)mageChoice:(id)sender {
+    [self.player generateMage];
+    [_playerSlot1 setImage:[UIImage imageNamed:@"wizard.png"]];
+    [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+
 }
 - (IBAction)rogueChoice:(id)sender {
+    [self.player generateRogue];
+    [_playerSlot1 setImage:[UIImage imageNamed:@"rogue.png"]];
+    [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
 }
 
 
@@ -70,22 +89,28 @@
     [playerBag addItemToBag:sword5];
     [playerBag addItemToBag:sword6];
     [playerBag addItemToBag:sword7];
-    NSLog(@"Sword1: %@", sword1.name);
-    NSLog(@"The Bag");
-    [playerBag displayBag];
+    //NSLog(@"Sword1: %@", sword1.name);
+    //NSLog(@"The Bag");
+    //[playerBag displayBag];
     
     [playerBag removeItemFromBag:sword1];
-    NSLog(@"The Bag");
+    //NSLog(@"The Bag");
     self.combatTextBox.text = [playerBag displayBag];
     
-    Unit * war = [[Unit alloc] init];
-    [war makeWarrior:war];
+    Unit * war = [[Unit alloc] initWarriorWithStats:@"WArrior"] ;
+    Unit * monster = [[Unit alloc] initRogueWithStats:@"Monster"];
+    
     NSLog(@"Current HP for War: %lu", war.healthPoints);
+    
     Potion * pot = [[Potion alloc] initPotion:0 withType:0];
+    Skills * warSkills = [[Skills alloc] init];
+    war.healthPoints -= 100;
+    NSLog(@"After taking damage: %lu", war.healthPoints);
+    
     [pot useItemOn:war];
     NSLog(@"After Health Pot: %lu", war.healthPoints);
     
-	// Do any additional setup after loading the view, typically from a nib.
+//view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
