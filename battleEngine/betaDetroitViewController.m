@@ -72,8 +72,10 @@
 - (IBAction)healButton:(UIButton *)sender {
 }
 - (IBAction)inventoryButton:(UIButton *)sender {
-    Potion * healthPot = [[Potion alloc] initPotion:1 withType:0];
-    NSLog(@"%@", healthPot.name);
+    Potion * healthPot = [[Potion alloc] initPotionType:Health ofSize:Minor];
+    Potion * manaPot = [[Potion alloc] initPotionType:Mana ofSize:Lesser];
+    NSLog(@"Mana Pot: %@", manaPot.name);
+    NSLog(@"Health Pot: %@", healthPot.name);
     self.combatTextBox.text = healthPot.name;
 }
 
@@ -96,42 +98,24 @@
     [playerBag addItemToBag:sword5];
     [playerBag addItemToBag:sword6];
     [playerBag addItemToBag:sword7];
-    //NSLog(@"Sword1: %@", sword1.name);
-    //NSLog(@"The Bag");
-    //[playerBag displayBag];
     
     [playerBag removeItemFromBag:sword1];
     //NSLog(@"The Bag");
     self.combatTextBox.text = [playerBag displayBag];
     
     Unit * war = [[Unit alloc] initWarriorWithStats:@"WArrior"] ;
-    Unit * monster = [[Unit alloc] initRogueWithStats:@"Monster"];
+    //Unit * monster = [[Unit alloc] initRogueWithStats:@"Monster"];
     
     NSLog(@"Current HP for War: %lu", war.healthPoints);
+    Potion * healthPot = [[Potion alloc] initPotionType:Health ofSize:Lesser];
+    Potion * manaPot = [[Potion alloc] initPotionType:Mana ofSize:Titan];
+    [playerBag addItemToBag:healthPot];
+    [healthPot useItemOn:war];
+    [playerBag removeItemFromBag:healthPot];
+    [manaPot useItemOn:war];
     
-    [monster CompensateLevelOne];
-    [monster listStats];
-    [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelTwo];
-    [monster listStats];
-    [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelThree];
-    [monster listStats];
-    [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelFour];
-    [monster listStats];
-    [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelFive];
-    [monster listStats];
-
-    
-    
-    [pot useItemOn:war];
     NSLog(@"After Health Pot: %lu", war.healthPoints);
+    
     
 //view, typically from a nib.
 }
