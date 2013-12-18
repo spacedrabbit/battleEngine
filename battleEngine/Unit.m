@@ -13,6 +13,8 @@
 -(void) setUnitStatsHealth:(NSUInteger)Hp Mana:(NSUInteger)Mp AttackPower:(NSUInteger)Atk Defense:(NSUInteger)Def MagicPwr:(NSUInteger)magicP MagicResist:(NSUInteger)MagicDef EXP:(NSUInteger)Exp Level:(NSUInteger)lvl
 {
     _maxHealthPoints = Hp;
+    _maxManaPoints = Mp;
+    
     _healthPoints = Hp;
     _manaPoints = Mp;
     _attackPower = Atk;

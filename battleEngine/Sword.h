@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Louis Tur. All rights reserved.
 //
 
-#import "Item.h"
+#import "Weapons.h"
 
-@interface Sword : Item
+@interface Sword : Weapons
 
 @property (nonatomic, strong) NSDictionary * stats;
 

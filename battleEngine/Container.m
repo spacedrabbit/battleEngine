@@ -16,7 +16,6 @@
 - (NSUInteger)bagSize{
     return (long)self.slotSize;
 }
-
 - (id)initBagWith:(NSUInteger)material withSlots:(int)numOfSlots {
     self = [super init];
     if (self) {
@@ -26,11 +25,11 @@
         self.stackSize = 0;
     }
     return self;
-}
-- (id) init {
+}- (id) init {
     return [self initBagWith:1 withSlots:6];
 }
 
+// Add and Remove Items from NSCountedSet
 - (BOOL)addItemToBag:(Item *)item {
     //NSLog(@"%i, %@, %lu", self.slotSize, item.name, [self.bagContents count] );
     if ( self.bagSize > [self.bagContents count] ){
@@ -41,7 +40,6 @@
         return FALSE;
     return TRUE;
 }
-
 -(BOOL)removeItemFromBag:(Item *) item {
     
     if ([self.bagContents countForObject:item] > 0) {
@@ -53,6 +51,7 @@
     }
 }
 
+// Returns the contents as an NSString, formatted into a list
 -(NSString *)displayBag{
     
     NSMutableArray * bag = [NSMutableArray arrayWithArray:[self.bagContents allObjects]];
