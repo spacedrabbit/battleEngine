@@ -5,6 +5,12 @@
 //  Created by Louis Tur on 12/8/13.
 //  Copyright (c) 2013 Louis Tur. All rights reserved.
 //
+/*
+    This sword class needs to be updated to recognize that it is part of the item class, meaning move the array of valid stats names to the Item class and create an enum for the stats
+ 
+        change arc4randoms to work better with a range
+ 
+ */
 
 #import "Sword.h"
 

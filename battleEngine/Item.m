@@ -10,6 +10,19 @@
 
 @implementation Item
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _potionSizes.lesserPotion = LESSER;
+        _potionSizes.minorPotion = MINOR;
+        _potionSizes.normalPotion = NORMAL;
+        _potionSizes.greaterPotion = GREATER;
+        _potionSizes.titanPotion = TITAN;
+    }
+    return self;
+}
+
 - (void) uniqueName:(NSString *)name {
     _name = name;
 }
@@ -23,7 +36,7 @@
 }
 
 + (NSArray *) sizes {
-    return @[@"Minor ",@"Lesser ", @"", @"Greater ", @"Titan "];
+    return @[@"Minor",@"Lesser", @"", @"Greater", @"Titan"];
 }
 
 + (NSArray *) type {

@@ -14,7 +14,7 @@
 @property (nonatomic) NSInteger potionType;
 @property (nonatomic, strong) NSMutableDictionary * properties;
 
-- (Potion *) initPotion: (NSInteger) size withType: (NSInteger) potionType;
+- (Potion *) initPotionType: (NSInteger) type ofSize: (NSInteger) size;
 - (void) useItemOn:(Unit *)unit;
 - (NSUInteger) changeStatsUpper: (NSUInteger) upperBound andLower: (NSUInteger) lowerBound;
 @end

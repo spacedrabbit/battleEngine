@@ -32,7 +32,7 @@
 }
 
 - (BOOL)addItemToBag:(Item *)item {
-    NSLog(@"%i, %@, %lu", self.slotSize, item.name, [self.bagContents count] );
+    //NSLog(@"%i, %@, %lu", self.slotSize, item.name, [self.bagContents count] );
     if ( self.bagSize > [self.bagContents count] ){
         [self.bagContents addObject:item];
         return TRUE;
@@ -59,7 +59,7 @@
     NSMutableString * bagContains = [NSMutableString string];
     
     for (Item * content in bag){
-        NSLog(@"Contents: %@", content.name);
+        //NSLog(@"Contents: %@", content.name);
         [bagContains appendFormat:@"%@\n", content.name];
     }
     return bagContains;
