@@ -109,26 +109,10 @@
     
     NSLog(@"Current HP for War: %lu", war.healthPoints);
     
-    [monster CompensateLevelOne];
-    [monster listStats];
-    [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelTwo];
-    [monster listStats];
-    [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelThree];
-    [monster listStats];
-    [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelFour];
-    [monster listStats];
-    [monster generateRandomMonster];
-    [monster listStats];
-    [monster CompensateLevelFive];
-    [monster listStats];
-
-    
+    Potion * pot = [[Potion alloc] initPotion:0 withType:0];
+    Skills * warSkills = [[Skills alloc] init];
+    war.healthPoints -= 100;
+    NSLog(@"After taking damage: %lu", war.healthPoints);
     
     [pot useItemOn:war];
     NSLog(@"After Health Pot: %lu", war.healthPoints);
