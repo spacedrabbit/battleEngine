@@ -27,7 +27,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *enemySlot1;
 @property (strong, nonatomic) IBOutlet UIScrollView *buttonScrollView;
 @property (strong, nonatomic) IBOutlet UITableView *inventoryView;
-
+@property (weak, nonatomic) IBOutlet UIButton *setButtonHidden;
 @end
 
 @implementation betaDetroitViewController
@@ -39,23 +39,28 @@
     return _player;
 }
 
--(IBAction)setButtonHidden{
-    _mageChoice.hidden = TRUE;
-    _warriorChoice.hidden =TRUE;
+-(id)setButtonHidden {
+    _warriorChoice.hidden=TRUE;
+    _mageChoice.hidden=TRUE;
     _rogueChoice.hidden=TRUE;
+    return 0;
+    
 }
+
 
 - (IBAction)warriorChoice:(id)sender {
     [self.player generateWarrior];
     [_playerSlot1 setImage:[UIImage imageNamed:@"knight-03.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
     //[self disableClassButtons];
+    [self setButtonHidden];
     
     }
 - (IBAction)mageChoice:(id)sender {
     [self.player generateMage];
     [_playerSlot1 setImage:[UIImage imageNamed:@"wizard.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [self setButtonHidden];
 
 }
 
@@ -63,6 +68,7 @@
     [self.player generateRogue];
     [_playerSlot1 setImage:[UIImage imageNamed:@"rogue.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [self setButtonHidden];
 }
 
 
@@ -82,7 +88,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
+    /*Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
     Sword * sword1 = [[Sword alloc] init];
     Sword * sword2 = [[Sword alloc] init];
     Sword * sword3 = [[Sword alloc] init];
@@ -119,11 +125,11 @@
     war.healthPoints -= 100;
     NSLog(@"After taking damage: %lu", war.healthPoints);
     
-    [pot useItemOn:war];
+   [pot useItemOn:war];
     NSLog(@"After Health Pot: %lu", war.healthPoints);
     
     
-//view, typically from a nib.
+//view, typically from a nib.*/
 }
 
 - (void)didReceiveMemoryWarning

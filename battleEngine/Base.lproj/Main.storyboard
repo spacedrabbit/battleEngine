@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -71,60 +71,36 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw3-Ua-MtJ">
-                                <rect key="frame" x="65" y="130" width="50" height="30"/>
+                                <rect key="frame" x="65" y="130" width="50" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Warrior">
                                     <color key="titleColor" red="0.88022248641304346" green="0.14338928909658061" blue="0.060623131551107073" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="warriorChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wDv-md-Kb5"/>
+                                    <action selector="warriorChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OUE-ev-fsF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CS-nM-KVU">
-                                <rect key="frame" x="145" y="130" width="39" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnI-GD-wlA">
+                                <rect key="frame" x="156" y="129" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Mage">
-                                    <color key="titleColor" red="1" green="0.60522500479999997" blue="0.64110744490000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.46748349837713044" blue="0.84237363025147316" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="mageChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="v1t-8f-eqM"/>
-                                    <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="913-Gl-qjr"/>
+                                    <action selector="mageChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sLw-09-Z6t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dd-pz-qlM">
-                                <rect key="frame" x="218" y="130" width="45" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqq-7c-Wnt">
+                                <rect key="frame" x="231" y="130" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Rogue">
-                                    <color key="titleColor" red="0.95845129423526587" green="1" blue="0.18287219049072112" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.96049683643783634" blue="0.1340037689067185" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="rogueChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N0z-OB-aLy"/>
-                                    <action selector="setButtonHidden" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1gQ-Vn-Ggr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fc-sS-YTk">
-                                <rect key="frame" x="145" y="130" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mage">
-                                    <color key="titleColor" red="1" green="0.60522500479999997" blue="0.64110744490000005" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="mageChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yKQ-AD-bF9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ym-ko-6kD">
-                                <rect key="frame" x="218" y="130" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Rogue">
-                                    <color key="titleColor" red="0.95845129419999997" green="1" blue="0.1828721905" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="rogueChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lwy-6Q-eat"/>
+                                    <action selector="rogueChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rco-8M-snn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,12 +112,12 @@
                         <outlet property="enemySlot1" destination="950-n4-wU0" id="lbK-u3-7P5"/>
                         <outlet property="healButton" destination="WPl-tm-GIA" id="SEa-fR-Nv0"/>
                         <outlet property="inventoryButton" destination="Ia7-cR-QfD" id="C1M-5t-Jf4"/>
-                        <outlet property="mageChoice" destination="3CS-nM-KVU" id="haZ-38-3HN"/>
+                        <outlet property="mageChoice" destination="wnI-GD-wlA" id="AM9-Ve-zxM"/>
                         <outlet property="playerSlot1" destination="fh0-K3-4uu" id="452-Dc-acV"/>
-                        <outlet property="rogueChoice" destination="3dd-pz-qlM" id="63o-B6-ZKj"/>
+                        <outlet property="rogueChoice" destination="hqq-7c-Wnt" id="O3D-Rc-6v6"/>
                         <outlet property="unitSlot1" destination="fh0-K3-4uu" id="gjX-6o-9am"/>
                         <outlet property="unitSlot2" destination="950-n4-wU0" id="vVY-Zr-aQr"/>
-                        <outlet property="warriorChoice" destination="Aw3-Ua-MtJ" id="c6G-BV-Rwy"/>
+                        <outlet property="warriorChoice" destination="Aw3-Ua-MtJ" id="QQX-0L-AdQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
