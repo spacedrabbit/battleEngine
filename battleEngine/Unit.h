@@ -10,7 +10,10 @@
 
 @interface Unit : NSObject
 
+//I added these two for testing - Louis
 @property (nonatomic) NSUInteger maxHealthPoints;
+@property (nonatomic) NSUInteger maxManaPoints;
+//
 
 @property (nonatomic) NSUInteger healthPoints;
 @property (nonatomic) NSUInteger manaPoints;

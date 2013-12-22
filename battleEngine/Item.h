@@ -23,11 +23,19 @@
 /* Created a typedef enum to correspond to the NSArray of possible item types
   Later, this enum is used to determine the type of potion when useItemOn: is called. 
  */
-typedef enum statGuide {
+typedef enum potionTypeGuide {
                         Health = 0,
                         Mana = 1,
                         Defense = 2
 } statGuide;
+
+typedef enum statTypeGuide {
+                        Attack = 0,
+                        PhysicalDefense = 1,
+                        MagicResist = 2,
+                        MagicAttack = 3,
+                        Experience= 4,
+} statTypeGuide;
 
 typedef enum potionSizeGuide {
                         Minor = 0,
@@ -45,7 +53,16 @@ typedef enum clothMaterials {
                         Rune = 4,
 } clothMaterials;
 
-typedef struct _potionSizeRanges {
+typedef enum statTypes {
+                        healthPoints,
+                        manaPoints,
+                        attackPower,
+                        magicPower,
+                        defensePower,
+                        magicDefense,
+}statTypes;
+
+typedef struct _potionSizes {
     NSRange lesserPotion;
     NSRange minorPotion;
     NSRange normalPotion;

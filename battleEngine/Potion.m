@@ -30,35 +30,31 @@
     }
     return self;
 }
-- (id)init
-{
+- (id)init{
     return [self initPotionType:Health ofSize:Lesser];
 }
-
 - (void) useItemOn: (Unit *) unit {
     //Acts upon the unit passed in, and action is based on the unit being passed in.
-    NSLog(@"THe potion type is: %@", [[Item type] objectAtIndex:self.potionType]);
+    
+    //NSLog(@"The potion type is: %@", [[Item type] objectAtIndex:self.potionType]);
+    NSRange manaRange = [self potionRangeCheck]; // checks for mix+max values for the hp/mana
+    NSUInteger healsFor = [self changeStatsUpper:manaRange.length andLower:manaRange.location];
     
     if ( self.potionType == Health ) {
         //checks to see if resulting health is greater than max health and if it is, it sets player hitpoints to max hitpoints
-        NSUInteger val = [self changeStatsUpper:75 andLower:75];
-        ( (unit.healthPoints + val) > unit.maxHealthPoints ) ? (unit.healthPoints = unit.maxHealthPoints) : (unit.healthPoints += val);
+        NSLog(@"THe Health Potion Gives You %lu health", healsFor);
+        ( (unit.healthPoints + healsFor) > unit.maxHealthPoints ) ? (unit.healthPoints = unit.maxHealthPoints) : (unit.healthPoints += healsFor);
     }
     else if (self.potionType == Mana ){
-        NSRange manaRange = self.potionSizes.titanPotion; // how can I make this better here
-        NSUInteger healsFor = [self changeStatsUpper:manaRange.length andLower:manaRange.location];
         NSLog(@"The mana potion gives you %lu mana", healsFor);
-        //needs maxMana bounds checking
+        ( (unit.manaPoints + healsFor) > unit.maxManaPoints ) ? (unit.manaPoints = unit.maxManaPoints) : (unit.manaPoints += healsFor);
     }
     else if (self.potionType == Defense){
-        unit.magicDefense += 50;
-        //need stat randomization
-        //does not need bounds checking, stat stacks
+        unit.magicDefense += healsFor;
     }
     else
         NSLog(@"Unknow potion type, error");
 }
-
 - (NSUInteger) changeStatsUpper: (NSUInteger) upperBound andLower: (NSUInteger) lowerBound {
     
     NSUInteger stat = arc4random_uniform((int)upperBound)+ lowerBound;
@@ -67,5 +63,20 @@
     return stat;
     
 }
-
+- (NSRange)potionRangeCheck {
+    if (self.potionType == Lesser ){
+        return LESSER;
+    }else if (self.potionType == Minor){
+        return MINOR;
+    }else if (self.potionType == Normal){
+        return NORMAL;
+    }else if (self.potionType == Greater){
+        return GREATER;
+    }else if (self.potionType == Titan){
+        return TITAN;
+    }else{
+        NSLog(@"Invalid Potion Type");
+        return NSMakeRange(0, 0);
+    }
+}
 @end

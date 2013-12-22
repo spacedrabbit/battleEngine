@@ -91,19 +91,9 @@
     /*Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
     Sword * sword1 = [[Sword alloc] init];
     Sword * sword2 = [[Sword alloc] init];
-    Sword * sword3 = [[Sword alloc] init];
-    Sword * sword4 = [[Sword alloc] init];
-    Sword * sword5 = [[Sword alloc] init];
-    Sword * sword6 = [[Sword alloc] init];
-    Sword * sword7 = [[Sword alloc] init];
 
     [playerBag addItemToBag:sword1];
     [playerBag addItemToBag:sword2];
-    [playerBag addItemToBag:sword3];
-    [playerBag addItemToBag:sword4];
-    [playerBag addItemToBag:sword5];
-    [playerBag addItemToBag:sword6];
-    [playerBag addItemToBag:sword7];
     
     [playerBag removeItemFromBag:sword1];
     //NSLog(@"The Bag");
@@ -112,12 +102,17 @@
     Unit * war = [[Unit alloc] initWarriorWithStats:@"WArrior"] ;
     //Unit * monster = [[Unit alloc] initRogueWithStats:@"Monster"];
     
-    NSLog(@"Current HP for War: %lu", war.healthPoints);
     Potion * healthPot = [[Potion alloc] initPotionType:Health ofSize:Lesser];
     Potion * manaPot = [[Potion alloc] initPotionType:Mana ofSize:Titan];
     [playerBag addItemToBag:healthPot];
+
+    NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
+    NSLog(@"Warrior takes 100 damage and uses 100 mp");
+    war.healthPoints -= 100;
+    war.manaPoints -= 100;
+    NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
+    
     [healthPot useItemOn:war];
-    [playerBag removeItemFromBag:healthPot];
     [manaPot useItemOn:war];
     
     Potion * pot = [[Potion alloc] initPotion:0 withType:0];

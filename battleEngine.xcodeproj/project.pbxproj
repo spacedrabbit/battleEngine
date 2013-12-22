@@ -36,6 +36,7 @@
 		14A3E9CE185D3E6B00B62004 /* wizard.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9C6185D3E6B00B62004 /* wizard.png */; };
 		14A3E9D0185D3F3C00B62004 /* background-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9CF185D3F3C00B62004 /* background-iphone.png */; };
 		14A3E9D2185D417400B62004 /* text box-iphone copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A3E9D1185D417400B62004 /* text box-iphone copy.png */; };
+		14B1C588186157E800AC47C2 /* Weapons.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B1C587186157E800AC47C2 /* Weapons.m */; };
 		14CA772E185D45720003E8D0 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA772D185D45720003E8D0 /* Unit.m */; };
 		14CA7731185D459A0003E8D0 /* Skills.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7730185D459A0003E8D0 /* Skills.m */; };
 		14CA7734185D45AD0003E8D0 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7733185D45AD0003E8D0 /* Item.m */; };
@@ -92,6 +93,8 @@
 		14A3E9C6185D3E6B00B62004 /* wizard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard.png; sourceTree = "<group>"; };
 		14A3E9CF185D3F3C00B62004 /* background-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-iphone.png"; sourceTree = "<group>"; };
 		14A3E9D1185D417400B62004 /* text box-iphone copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text box-iphone copy.png"; sourceTree = "<group>"; };
+		14B1C586186157E800AC47C2 /* Weapons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapons.h; sourceTree = "<group>"; };
+		14B1C587186157E800AC47C2 /* Weapons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weapons.m; sourceTree = "<group>"; };
 		14CA772C185D45720003E8D0 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
 		14CA772D185D45720003E8D0 /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
 		14CA772F185D459A0003E8D0 /* Skills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skills.h; sourceTree = "<group>"; };
@@ -233,6 +236,17 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		14B1C5891861580500AC47C2 /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				14B1C586186157E800AC47C2 /* Weapons.h */,
+				14B1C587186157E800AC47C2 /* Weapons.m */,
+				14566D5D185D60CE000A00A2 /* Sword.h */,
+				14566D5E185D60CE000A00A2 /* Sword.m */,
+			);
+			name = Equipment;
+			sourceTree = "<group>";
+		};
 		14CA7735185D45BA0003E8D0 /* Units */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,10 +272,9 @@
 			children = (
 				14CA7732185D45AD0003E8D0 /* Item.h */,
 				14CA7733185D45AD0003E8D0 /* Item.m */,
-				14566D5D185D60CE000A00A2 /* Sword.h */,
-				14566D5E185D60CE000A00A2 /* Sword.m */,
 				14566D60185D61F3000A00A2 /* Container.h */,
 				14566D61185D61F3000A00A2 /* Container.m */,
+				14B1C5891861580500AC47C2 /* Equipment */,
 				14566D69185E8385000A00A2 /* Consumables */,
 			);
 			name = Items;
@@ -386,6 +399,7 @@
 				14566D5C185D4C0B000A00A2 /* Potion.m in Sources */,
 				14A3E99A185D26AA00B62004 /* betaDetroitAppDelegate.m in Sources */,
 				14A3E996185D26AA00B62004 /* main.m in Sources */,
+				14B1C588186157E800AC47C2 /* Weapons.m in Sources */,
 				14CA7731185D459A0003E8D0 /* Skills.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
