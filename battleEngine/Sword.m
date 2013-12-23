@@ -16,21 +16,22 @@
 
 @implementation Sword
 
-- (id)init
+- (id)initWeaponType: (NSUInteger) weap inSlots: (NSUInteger) slotOccuied withStats: (NSArray *) statArray withAttackRange:(NSRange)aRange andMagicRange:(NSRange)mRange
 {
     self = [super init];
     if (self) {
         
-        // This should call [Self validStats] to generate this list
-        // In that manner, adding a string to the valid stats results in an additional stat
-        // with minimal work
-        self.stats = [NSDictionary dictionaryWithObjectsAndKeys:
-                      [self randBase:4 withModifier:2], @"dmg",
-                      [self randBase:25 withModifier:25], @"spd",
-                      nil];
+        self.weaponType = weap;
+        _weapStats.healthPoints = [statArray[0] integerValue];
+        _weapStats.manaPoints = [statArray[1] integerValue];
+        _weapStats.defensePower = [statArray[2] integerValue];
+        _weapStats.magicDefense = [statArray[3] integerValue];
+        _weapStats.speed = [statArray[4] floatValue];
         
-        self.sellPrice = [[self randBase:100 withModifier:75] longValue];
-        //NSLog(@"In the Sword Generation. Price: %lu", (unsigned long)self.sellPrice);
+        _weapStats.attackPower = aRange;
+        _weapStats.magicPower = mRange;
+        
+        self.weaponSlots = slotOccuied;//one or two handed, not implemented
         [self generateName];
     }
     return self;
@@ -39,31 +40,38 @@
 - (NSNumber *) randBase: (NSUInteger) base withModifier: (NSUInteger) modifier {
     return [NSNumber numberWithUnsignedLong:(arc4random() % base + modifier) ];
 }
-
-+ (NSArray *)validStats {
-    return @[@"dmg",@"spd"];
-}
-
 - (void) generateName {
     
-    NSArray * myArr = [Item weaponWordBank];
-    NSString * newName = [myArr objectAtIndex:(arc4random() % [myArr count])];
-    NSString * newerName = [newName stringByAppendingString:@" Sword"];
+    NSArray * myArr = [Item weaponWordBank]; //descriptor word
+    NSMutableString * newName = [NSMutableString string];
+    [newName appendFormat:@"%@ ", [myArr objectAtIndex:(arc4random() % [myArr count] ) ]];
+                                 
+    //[myArr objectAtIndex:(arc4random() % [myArr count];
     
-    [self uniqueName:newerName];
+    self.weaponNameArray = [NSMutableDictionary dictionaryWithObjects:[Weapons returnWeaponType] forKeys:[NSArray arrayWithObjects:@0,@1,@2,@3,@4,@5,@6,@7, nil]];
+    
+    NSString * oneOrTwoHanded = [self.weaponNameArray objectForKey:[NSNumber numberWithLong: ( self.weaponSlots == weapon1And2slot ? 1 : 0) ]];
+    //NSLog(@"One or Two %@", oneOrTwoHanded);
+                                                                    
+    NSString * weaponClass = [self.weaponNameArray objectForKey:[NSNumber numberWithLong:self.weaponType]];//not working properly
+    
+    [newName appendString:oneOrTwoHanded];
+    [newName appendFormat:@" %@", weaponClass];
+    
+    [self uniqueName:newName];
     
 }
-
 - (NSString *)swordStats {
     
-    NSMutableArray * arr = [NSMutableArray arrayWithArray:[Sword validStats]];
-    NSMutableString * final = [NSMutableString stringWithFormat:@"%@ \n-------------------\n", self.name];
+    NSUInteger baseAttack = self.weapStats.attackPower.location;
+    NSUInteger maxAttack = baseAttack + self.weapStats.attackPower.length;
     
-    for (NSString * key in arr) {
-        //NSLog(@"%@: %@", key, [self.stats objectForKey:key]);
-        [final appendFormat:@"%@: %@\n", key, [self.stats objectForKey:key]];
-        
-    }
+    NSUInteger baseMagicAttack = self.weapStats.magicPower.location;
+    NSUInteger maxMagicAttack = baseAttack + self.weapStats.magicPower.length;
+    
+    NSMutableString * final = [NSMutableString  stringWithFormat:@"Attack Range: %lu - %lu", (baseAttack > 0) ? baseAttack : baseMagicAttack, (baseAttack >0)?maxAttack : maxMagicAttack];//determines whether the weapon is Damage or Magic based. 
+    [final appendFormat:@"\nHP: %lu\nMP: %lu\nDef: %lu\nMag Def: %lu\nSpd: %.2f", self.weapStats.healthPoints, self.weapStats.manaPoints, self.weapStats.defensePower, self.weapStats.magicDefense, self.weapStats.speed];
+    
     
     return final;
 }

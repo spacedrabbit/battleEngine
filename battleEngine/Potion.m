@@ -42,7 +42,7 @@
     
     if ( self.potionType == Health ) {
         //checks to see if resulting health is greater than max health and if it is, it sets player hitpoints to max hitpoints
-        NSLog(@"THe Health Potion Gives You %lu health", healsFor);
+        NSLog(@"The Health Potion Gives You %lu health", healsFor);
         ( (unit.healthPoints + healsFor) > unit.maxHealthPoints ) ? (unit.healthPoints = unit.maxHealthPoints) : (unit.healthPoints += healsFor);
     }
     else if (self.potionType == Mana ){
@@ -58,7 +58,7 @@
 - (NSUInteger) changeStatsUpper: (NSUInteger) upperBound andLower: (NSUInteger) lowerBound {
     
     NSUInteger stat = arc4random_uniform((int)upperBound)+ lowerBound;
-    NSLog(@"Mana Points Recovered: %lu", stat);
+    //NSLog(@"Mana Points Recovered: %lu", stat);
     
     return stat;
     

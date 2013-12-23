@@ -123,7 +123,7 @@
     Potion * manaPot = [[Potion alloc] initPotionType:Mana ofSize:Lesser];
     NSLog(@"Mana Pot: %@", manaPot.name);
     NSLog(@"Health Pot: %@", healthPot.name);
-    self.combatTextBox.text = healthPot.name;
+    self.combatTextBox.text = [NSString stringWithFormat:@"%@\n %@", healthPot.name, manaPot.name];
 }
 
 - (void)viewDidLoad
@@ -133,24 +133,17 @@
     Sword * sword1 = [[Sword alloc] init];
     Sword * sword2 = [[Sword alloc] init];
 
-    [playerBag addItemToBag:sword1];
-    [playerBag addItemToBag:sword2];
-    
-    [playerBag removeItemFromBag:sword1];
-    //NSLog(@"The Bag");
-    self.combatTextBox.text = [playerBag displayBag];
-    
     Unit * war = [[Unit alloc] initWarriorWithStats:@"WArrior"] ;
     //Unit * monster = [[Unit alloc] initRogueWithStats:@"Monster"];
     
     Potion * healthPot = [[Potion alloc] initPotionType:Health ofSize:Lesser];
     Potion * manaPot = [[Potion alloc] initPotionType:Mana ofSize:Titan];
     [playerBag addItemToBag:healthPot];
-
+    
     NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
-    NSLog(@"Warrior takes 100 damage and uses 100 mp");
+    NSLog(@"Warrior takes 100 damage and uses 5 mp");
     war.healthPoints -= 100;
-    war.manaPoints -= 100;
+    war.manaPoints -= 5;
     NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
     
     [healthPot useItemOn:war];
@@ -164,11 +157,28 @@
     
 //view, typically from a nib.
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)testSwords {
+    
+    NSArray * stats = [NSArray arrayWithObjects:@25, @0, @0, @0, @1.23, nil];
+    NSArray * stats2 = [NSArray arrayWithObjects:@100, @0, @20, @0, @3.13, nil];
+    NSArray * stats3 = [NSArray arrayWithObjects:@1250, @0, @120, @40, @0.0, nil];
+    Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
+    
+    Sword * sword1 = [[Sword alloc] initWeaponType:sword inSlots:weapon1Slot withStats:stats withAttackRange:NSMakeRange(25, 10) andMagicRange:NSMakeRange(0, 0)];
+    NSLog(@"Stats: \n %@", [sword1 swordStats]);
+    
+    Sword * sword2 = [[Sword alloc] initWeaponType:hammer inSlots:weapon1And2slot withStats:stats2 withAttackRange:NSMakeRange(20, 35) andMagicRange:NSMakeRange(0, 0)];
+    NSLog(@"Stats: \n %@", [sword2 swordStats]);
+    
+    Sword * sword3 = [[Sword alloc] initWeaponType:shield inSlots:weapon2Slot withStats:stats3 withAttackRange:NSMakeRange(0, 0) andMagicRange:NSMakeRange(0, 0)];
+    NSLog(@"Stats: \n %@", [sword3 swordStats]);
+    
+    [playerBag addItemToBag:sword1];
+    [playerBag addItemToBag:sword2];
+    [playerBag addItemToBag:sword3];
+    self.combatTextBox.text = [playerBag displayBag];
+    
+    
 }
 
 
