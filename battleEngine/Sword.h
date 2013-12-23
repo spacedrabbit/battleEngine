@@ -11,8 +11,9 @@
 @interface Sword : Weapons
 
 @property (nonatomic, strong) NSDictionary * stats;
+@property (nonatomic) statTypes weapStats;
 
+- (id)initWeaponType: (NSUInteger) weap inSlots: (NSUInteger) slotOccuied withStats: (NSArray *) statArray withAttackRange:(NSRange)aRange andMagicRange:(NSRange)mRange;
 - (NSString *) swordStats;
-+(NSArray *) validStats;
 
 @end

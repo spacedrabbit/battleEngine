@@ -19,6 +19,7 @@
 @property (nonatomic) NSUInteger sellPrice;
 @property (nonatomic) NSUInteger resellPrice;
 @property (nonatomic) NSUInteger stackSize;//set to 0 no stack
+@property (nonatomic) NSUInteger itemLevel;
 
 /* Created a typedef enum to correspond to the NSArray of possible item types
   Later, this enum is used to determine the type of potion when useItemOn: is called. 
@@ -53,13 +54,14 @@ typedef enum clothMaterials {
                         Rune = 4,
 } clothMaterials;
 
-typedef enum statTypes {
-                        healthPoints,
-                        manaPoints,
-                        attackPower,
-                        magicPower,
-                        defensePower,
-                        magicDefense,
+typedef struct statTypes { // corresponds to 'equipmentStats'
+    NSUInteger healthPoints;
+    NSUInteger manaPoints;
+    NSRange attackPower;
+    NSRange magicPower;
+    NSUInteger defensePower;
+    NSUInteger magicDefense;
+    float speed;
 }statTypes;
 
 typedef struct _potionSizes {
@@ -77,5 +79,6 @@ typedef struct _potionSizes {
 + (NSArray *) bagMaterials;
 + (NSArray *) sizes;
 + (NSArray *) type;
++ (NSArray *) equipmentStats;
 
 @end

@@ -42,5 +42,8 @@
 + (NSArray *) type {
     return @[@"Health",@"Mana",@"Defense"];
 }
++ (NSArray *)equipmentStats {
+    return @[@"Health Points", @"Mana Points", @"Physical Damage", @"Magic Damage", @"Magic Resist", @"Physical Resist", @"Speed"];
+}
 
 @end

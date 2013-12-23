@@ -12,6 +12,8 @@
 		14566D5F185D60CE000A00A2 /* Sword.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D5E185D60CE000A00A2 /* Sword.m */; };
 		14566D62185D61F3000A00A2 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D61185D61F3000A00A2 /* Container.m */; };
 		14566D65185D92F9000A00A2 /* SysAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D64185D92F9000A00A2 /* SysAlerts.m */; };
+		14A349941867A09B00A786BE /* Equipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A349931867A09B00A786BE /* Equipment.m */; };
+		14A349971867EC2500A786BE /* Armor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A349961867EC2400A786BE /* Armor.m */; };
 		14A3E98A185D26AA00B62004 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3E989185D26AA00B62004 /* Foundation.framework */; };
 		14A3E98C185D26AA00B62004 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3E98B185D26AA00B62004 /* CoreGraphics.framework */; };
 		14A3E98E185D26AA00B62004 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3E98D185D26AA00B62004 /* UIKit.framework */; };
@@ -64,6 +66,10 @@
 		14566D61185D61F3000A00A2 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Container.m; sourceTree = "<group>"; };
 		14566D63185D92F9000A00A2 /* SysAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysAlerts.h; sourceTree = "<group>"; };
 		14566D64185D92F9000A00A2 /* SysAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysAlerts.m; sourceTree = "<group>"; };
+		14A349921867A09B00A786BE /* Equipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Equipment.h; sourceTree = "<group>"; };
+		14A349931867A09B00A786BE /* Equipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Equipment.m; sourceTree = "<group>"; };
+		14A349951867EC2400A786BE /* Armor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armor.h; sourceTree = "<group>"; };
+		14A349961867EC2400A786BE /* Armor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Armor.m; sourceTree = "<group>"; };
 		14A3E986185D26AA00B62004 /* battleEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = battleEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A3E989185D26AA00B62004 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14A3E98B185D26AA00B62004 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -239,6 +245,10 @@
 		14B1C5891861580500AC47C2 /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
+				14A349921867A09B00A786BE /* Equipment.h */,
+				14A349951867EC2400A786BE /* Armor.h */,
+				14A349961867EC2400A786BE /* Armor.m */,
+				14A349931867A09B00A786BE /* Equipment.m */,
 				14B1C586186157E800AC47C2 /* Weapons.h */,
 				14B1C587186157E800AC47C2 /* Weapons.m */,
 				14566D5D185D60CE000A00A2 /* Sword.h */,
@@ -390,6 +400,8 @@
 			files = (
 				14566D65185D92F9000A00A2 /* SysAlerts.m in Sources */,
 				14CA7734185D45AD0003E8D0 /* Item.m in Sources */,
+				14A349941867A09B00A786BE /* Equipment.m in Sources */,
+				14A349971867EC2500A786BE /* Armor.m in Sources */,
 				14A3E9A0185D26AA00B62004 /* betaDetroitViewController.m in Sources */,
 				14CA772E185D45720003E8D0 /* Unit.m in Sources */,
 				14566D5F185D60CE000A00A2 /* Sword.m in Sources */,
