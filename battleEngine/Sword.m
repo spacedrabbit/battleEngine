@@ -40,6 +40,7 @@
 - (NSNumber *) randBase: (NSUInteger) base withModifier: (NSUInteger) modifier {
     return [NSNumber numberWithUnsignedLong:(arc4random() % base + modifier) ];
 }
+// generates name based on weapon type and itemSlots
 - (void) generateName {
     
     NSArray * myArr = [Item weaponWordBank]; //descriptor word
@@ -61,6 +62,8 @@
     [self uniqueName:newName];
     
 }
+
+// for printing out sword stats
 - (NSString *)swordStats {
     
     NSUInteger baseAttack = self.weapStats.attackPower.location;
@@ -69,8 +72,8 @@
     NSUInteger baseMagicAttack = self.weapStats.magicPower.location;
     NSUInteger maxMagicAttack = baseAttack + self.weapStats.magicPower.length;
     
-    NSMutableString * final = [NSMutableString  stringWithFormat:@"Attack Range: %lu - %lu", (baseAttack > 0) ? baseAttack : baseMagicAttack, (baseAttack >0)?maxAttack : maxMagicAttack];//determines whether the weapon is Damage or Magic based. 
-    [final appendFormat:@"\nHP: %lu\nMP: %lu\nDef: %lu\nMag Def: %lu\nSpd: %.2f", self.weapStats.healthPoints, self.weapStats.manaPoints, self.weapStats.defensePower, self.weapStats.magicDefense, self.weapStats.speed];
+    NSMutableString * final = [NSMutableString  stringWithFormat:@"Attack Range: %lu - %lu", (unsigned long)((baseAttack > 0) ? baseAttack : baseMagicAttack), (unsigned long)((baseAttack >0)?maxAttack : maxMagicAttack)];//determines whether the weapon is Damage or Magic based. 
+    [final appendFormat:@"\nHP: %lu\nMP: %lu\nDef: %lu\nMag Def: %lu\nSpd: %.2f", (unsigned long)self.weapStats.healthPoints, (unsigned long)self.weapStats.manaPoints, (unsigned long)self.weapStats.defensePower, (unsigned long)self.weapStats.magicDefense, self.weapStats.speed];
     
     
     return final;

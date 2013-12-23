@@ -8,6 +8,7 @@
 
 #import "Item.h"
 
+// Consumabe objects conform to this protocol. Must be defined
 @protocol Consumbable <NSObject>
 
 - (void) useItemOn: (Unit *) unit;
