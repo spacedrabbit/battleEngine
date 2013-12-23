@@ -15,12 +15,12 @@
 @property (nonatomic) NSUInteger maxManaPoints;
 //
 
-@property (nonatomic) NSUInteger healthPoints;
-@property (nonatomic) NSUInteger manaPoints;
-@property (nonatomic) NSUInteger attackPower;
-@property (nonatomic) NSUInteger defensePower;
-@property (nonatomic) NSUInteger magicPower;
-@property (nonatomic) NSUInteger magicDefense;
+@property (nonatomic) long healthPoints;
+@property (nonatomic) long manaPoints;
+@property (nonatomic) long attackPower;
+@property (nonatomic) long defensePower;
+@property (nonatomic) long magicPower;
+@property (nonatomic) long magicDefense;
 @property (nonatomic) NSUInteger experiencePoints;
 @property (nonatomic) NSUInteger level;
 @property (nonatomic, strong)Unit *warrior;
@@ -28,11 +28,14 @@
 @property (nonatomic, strong)Unit *rogue;
 
 
--(void) setUnitStatsHealth:(NSUInteger)Hp Mana:(NSUInteger)Mp AttackPower:(NSUInteger)Atk Defense:(NSUInteger)Def MagicPwr:(NSUInteger)magicP MagicResist:(NSUInteger)MagicDef EXP:(NSUInteger)Exp Level:(NSUInteger)lvl;
+-(void) setUnitStatsHealth:(long)Hp Mana:(long)Mp AttackPower:(long)Atk Defense:(long)Def MagicPwr:(long)magicP MagicResist:(long)MagicDef EXP:(NSUInteger)Exp Level:(NSUInteger)lvl;
 
 -(void)levelUp;
-
+-(void)CompensateLevel:(Unit *)target;
+-(void)encounterExperience: (Unit *)f;
 -(void)listStats;
+
+-(void)attack:(Unit *) target;
 
 -(void)generateWarrior;
 -(void)generateMage;

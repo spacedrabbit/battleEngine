@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="950-n4-wU0">
-                                <rect key="frame" x="193" y="259" width="105" height="122"/>
+                                <rect key="frame" x="187" y="243" width="105" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="text box-iphone copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="oOc-SL-wzA">
@@ -103,6 +103,17 @@
                                     <action selector="rogueChoice:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rco-8M-snn"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBt-yv-EGz">
+                                <rect key="frame" x="206" y="92" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New Creature">
+                                    <color key="titleColor" red="0.03626506026244547" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getCreature:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="COT-Vi-Gv5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -110,6 +121,7 @@
                         <outlet property="attackButton" destination="9Ae-0V-vgP" id="uKK-ex-VQD"/>
                         <outlet property="combatTextBox" destination="v3X-wN-lHc" id="fvh-7r-1fd"/>
                         <outlet property="enemySlot1" destination="950-n4-wU0" id="lbK-u3-7P5"/>
+                        <outlet property="getCreature" destination="lBt-yv-EGz" id="EHT-hH-27d"/>
                         <outlet property="healButton" destination="WPl-tm-GIA" id="SEa-fR-Nv0"/>
                         <outlet property="inventoryButton" destination="Ia7-cR-QfD" id="C1M-5t-Jf4"/>
                         <outlet property="mageChoice" destination="wnI-GD-wlA" id="AM9-Ve-zxM"/>
