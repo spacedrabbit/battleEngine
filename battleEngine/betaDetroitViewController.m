@@ -11,6 +11,7 @@
 #import "Container.h"
 #import "Sword.h"
 #import "Skills.h"
+#import "SysAlerts.h"
 
 @interface betaDetroitViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *attackButton;
@@ -83,6 +84,7 @@
 {
     [super viewDidLoad];
     [self testSwords];
+    [self testPotions];
     
 //view, typically from a nib.
 }
@@ -93,7 +95,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) testPotions{
+-(void)testPotions{
     Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
 
     Unit * war = [[Unit alloc] initWarriorWithStats:@"WArrior"] ;
@@ -116,6 +118,8 @@
     
     
     NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
+    
+    [SysAlerts notEnoughGold:100 forThis:200];
     
 }
 -(void)testSwords {

@@ -12,6 +12,7 @@
 		14566D5F185D60CE000A00A2 /* Sword.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D5E185D60CE000A00A2 /* Sword.m */; };
 		14566D62185D61F3000A00A2 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D61185D61F3000A00A2 /* Container.m */; };
 		14566D65185D92F9000A00A2 /* SysAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D64185D92F9000A00A2 /* SysAlerts.m */; };
+		145C16491870E08E005ABE4E /* eMIBL7L.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 145C16481870E08E005ABE4E /* eMIBL7L.jpg */; };
 		14A349941867A09B00A786BE /* Equipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A349931867A09B00A786BE /* Equipment.m */; };
 		14A349971867EC2500A786BE /* Armor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A349961867EC2400A786BE /* Armor.m */; };
 		14A3E98A185D26AA00B62004 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A3E989185D26AA00B62004 /* Foundation.framework */; };
@@ -66,6 +67,7 @@
 		14566D61185D61F3000A00A2 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Container.m; sourceTree = "<group>"; };
 		14566D63185D92F9000A00A2 /* SysAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysAlerts.h; sourceTree = "<group>"; };
 		14566D64185D92F9000A00A2 /* SysAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysAlerts.m; sourceTree = "<group>"; };
+		145C16481870E08E005ABE4E /* eMIBL7L.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eMIBL7L.jpg; sourceTree = "<group>"; };
 		14A349921867A09B00A786BE /* Equipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Equipment.h; sourceTree = "<group>"; };
 		14A349931867A09B00A786BE /* Equipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Equipment.m; sourceTree = "<group>"; };
 		14A349951867EC2400A786BE /* Armor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armor.h; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		14A3E97D185D26AA00B62004 = {
 			isa = PBXGroup;
 			children = (
+				145C16481870E08E005ABE4E /* eMIBL7L.jpg */,
 				14A3E98F185D26AA00B62004 /* battleEngine */,
 				14A3E9AE185D26AA00B62004 /* battleEngineTests */,
 				14A3E988185D26AA00B62004 /* Frameworks */,
@@ -371,6 +374,7 @@
 				14A3E9CE185D3E6B00B62004 /* wizard.png in Resources */,
 				14A3E9CD185D3E6B00B62004 /* WaterSprite.png in Resources */,
 				14A3E9CB185D3E6B00B62004 /* text box-03.png in Resources */,
+				145C16491870E08E005ABE4E /* eMIBL7L.jpg in Resources */,
 				14A3E9D2185D417400B62004 /* text box-iphone copy.png in Resources */,
 				14A3E9A2185D26AA00B62004 /* Images.xcassets in Resources */,
 				14A3E9C8185D3E6B00B62004 /* knight-03.png in Resources */,
