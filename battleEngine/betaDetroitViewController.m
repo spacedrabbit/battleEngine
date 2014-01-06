@@ -28,10 +28,20 @@
 @property (strong, nonatomic) IBOutlet UIImageView *enemySlot1;
 @property (strong, nonatomic) IBOutlet UIScrollView *buttonScrollView;
 @property (strong, nonatomic) IBOutlet UITableView *inventoryView;
+@property (weak, nonatomic) IBOutlet UIButton *setButtonHidden;
+@property (strong, nonatomic) IBOutlet UIButton *getCreature;
 
+@property (strong, nonatomic) Creatures * monster;
 @end
 
 @implementation betaDetroitViewController
+
+- (Creatures *)monster {
+    if (!_monster){
+        _monster = [[Creatures alloc]init];
+    }
+    return _monster;
+}
 
 - (Unit *)player {
     if (!_player){
@@ -40,36 +50,72 @@
     return _player;
 }
 
--(IBAction)setButtonHidden{
-    _mageChoice.hidden = TRUE;
-    _warriorChoice.hidden =TRUE;
+-(id)setButtonHidden {
+    _warriorChoice.hidden=TRUE;
+    _mageChoice.hidden=TRUE;
     _rogueChoice.hidden=TRUE;
+    return 0;
+    
 }
+
 
 - (IBAction)warriorChoice:(id)sender {
     [self.player generateWarrior];
+    [self.monster generateRandomMonster];
+    [self.player CompensateLevel:self.monster];
+    [self.player listStats];
+    [self.monster listStats];
     [_playerSlot1 setImage:[UIImage imageNamed:@"knight-03.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
     //[self disableClassButtons];
+    [self setButtonHidden];
     
     }
 - (IBAction)mageChoice:(id)sender {
     [self.player generateMage];
+    [self.monster generateRandomMonster];
+    [self.player CompensateLevel:self.monster];
+    [self.player listStats];
+    [self.monster listStats];
     [_playerSlot1 setImage:[UIImage imageNamed:@"wizard.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [self setButtonHidden];
 
 }
 
 - (IBAction)rogueChoice:(id)sender {
     [self.player generateRogue];
+    [self.monster generateRandomMonster];
+    [self.player CompensateLevel:self.monster];
+    [self.player listStats];
+    [self.monster listStats];
     [_playerSlot1 setImage:[UIImage imageNamed:@"rogue.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [self setButtonHidden];
 }
 
 
 - (IBAction)attackButton:(UIButton *)sender {
-
+    [self.player encounterExperience:self.monster];
+    [self.player attack:self.monster];
+    [self.monster listStats];
+    NSLog(@"Monster health points: %lu", self.monster.healthPoints);
+    if (self.monster.healthPoints == 0) {
+        [self.player levelUp];
+        [_enemySlot1 setImage:nil];
+        [_getCreature setHidden:FALSE];
+    }
+    
 }
+- (IBAction)getCreature:(id)sender {
+    [self.player listStats];
+    NSLog(@"EXP:%lu Level:%lu", self.player.experiencePoints, self.player.level);
+    [self.monster generateRandomMonster];
+    [self.player CompensateLevel:self.monster];
+     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [sender setHidden:TRUE];
+}
+
 - (IBAction)healButton:(UIButton *)sender {
 }
 - (IBAction)inventoryButton:(UIButton *)sender {
@@ -118,6 +164,7 @@
     
     
     NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
+    */
     
     [SysAlerts notEnoughGold:100 forThis:200];
     
@@ -145,6 +192,8 @@
     
     
 }
+
+
 
 
 @end

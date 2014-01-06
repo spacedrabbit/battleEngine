@@ -33,6 +33,8 @@
 - (id)init{
     return [self initPotionType:Health ofSize:Lesser];
 }
+
+// uses potion on Unit class, does checks for maxMana/maxHP
 - (void) useItemOn: (Unit *) unit {
     //Acts upon the unit passed in, and action is based on the unit being passed in.
     
@@ -42,11 +44,11 @@
     
     if ( self.potionType == Health ) {
         //checks to see if resulting health is greater than max health and if it is, it sets player hitpoints to max hitpoints
-        NSLog(@"The Health Potion Gives You %lu health", healsFor);
+        NSLog(@"The Health Potion Gives You %lu health", (unsigned long)healsFor);
         ( (unit.healthPoints + healsFor) > unit.maxHealthPoints ) ? (unit.healthPoints = unit.maxHealthPoints) : (unit.healthPoints += healsFor);
     }
     else if (self.potionType == Mana ){
-        NSLog(@"The mana potion gives you %lu mana", healsFor);
+        NSLog(@"The mana potion gives you %lu mana", (unsigned long)healsFor);
         ( (unit.manaPoints + healsFor) > unit.maxManaPoints ) ? (unit.manaPoints = unit.maxManaPoints) : (unit.manaPoints += healsFor);
     }
     else if (self.potionType == Defense){
@@ -55,14 +57,17 @@
     else
         NSLog(@"Unknow potion type, error");
 }
+
+// returns amount to heal/mana
 - (NSUInteger) changeStatsUpper: (NSUInteger) upperBound andLower: (NSUInteger) lowerBound {
     
     NSUInteger stat = arc4random_uniform((int)upperBound)+ lowerBound;
     //NSLog(@"Mana Points Recovered: %lu", stat);
     
     return stat;
-    
 }
+
+// returns NSRange for potion size range
 - (NSRange)potionRangeCheck {
     if (self.potionType == Lesser ){
         return LESSER;

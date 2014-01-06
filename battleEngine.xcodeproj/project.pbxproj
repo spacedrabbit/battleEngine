@@ -44,6 +44,7 @@
 		14CA7731185D459A0003E8D0 /* Skills.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7730185D459A0003E8D0 /* Skills.m */; };
 		14CA7734185D45AD0003E8D0 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA7733185D45AD0003E8D0 /* Item.m */; };
 		3E94F055185E8151001464F6 /* Creatures.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E94F054185E8151001464F6 /* Creatures.m */; };
+		B13674C71868A2ED00FAC77E /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = B13674C61868A2ED00FAC77E /* Encounter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		14CA7733185D45AD0003E8D0 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		3E94F053185E8151001464F6 /* Creatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Creatures.h; sourceTree = "<group>"; };
 		3E94F054185E8151001464F6 /* Creatures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Creatures.m; sourceTree = "<group>"; };
+		B13674C51868A2ED00FAC77E /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
+		B13674C61868A2ED00FAC77E /* Encounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encounter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +190,8 @@
 				14A3E99F185D26AA00B62004 /* betaDetroitViewController.m */,
 				14566D63185D92F9000A00A2 /* SysAlerts.h */,
 				14566D64185D92F9000A00A2 /* SysAlerts.m */,
+				B13674C51868A2ED00FAC77E /* Encounter.h */,
+				B13674C61868A2ED00FAC77E /* Encounter.m */,
 				14CA7735185D45BA0003E8D0 /* Units */,
 				14CA7736185D45C20003E8D0 /* Skills */,
 				14CA7737185D45CA0003E8D0 /* Items */,
@@ -411,6 +416,7 @@
 				14566D5F185D60CE000A00A2 /* Sword.m in Sources */,
 				14566D59185D4BC0000A00A2 /* Consumable.m in Sources */,
 				3E94F055185E8151001464F6 /* Creatures.m in Sources */,
+				B13674C71868A2ED00FAC77E /* Encounter.m in Sources */,
 				14566D62185D61F3000A00A2 /* Container.m in Sources */,
 				14566D5C185D4C0B000A00A2 /* Potion.m in Sources */,
 				14A3E99A185D26AA00B62004 /* betaDetroitAppDelegate.m in Sources */,

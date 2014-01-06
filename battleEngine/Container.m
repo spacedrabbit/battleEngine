@@ -16,6 +16,7 @@
 - (NSUInteger)bagSize{
     return (long)self.slotSize;
 }
+
 - (id)initBagWith:(NSUInteger)material withSlots:(int)numOfSlots {
     self = [super init];
     if (self) {
