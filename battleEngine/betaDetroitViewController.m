@@ -11,6 +11,7 @@
 #import "Container.h"
 #import "Sword.h"
 #import "Skills.h"
+#import "Creatures.h"
 #import "SysAlerts.h"
 
 @interface betaDetroitViewController ()
