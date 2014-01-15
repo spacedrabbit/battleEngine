@@ -19,7 +19,7 @@
 @property (nonatomic) NSUInteger sellPrice;
 @property (nonatomic) NSUInteger resellPrice;
 @property (nonatomic) NSUInteger stackSize;//set to 0 no stack
-@property (nonatomic) NSUInteger itemLevel;
+@property (nonatomic) NSUInteger itemLevel; // not implemented, used for bonuses
 
 /* Created a typedef enum to correspond to the NSArray of possible item types
   Later, this enum is used to determine the type of potion when useItemOn: is called. 
