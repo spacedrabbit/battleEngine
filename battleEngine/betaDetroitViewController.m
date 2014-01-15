@@ -30,11 +30,28 @@
 @property (strong, nonatomic) IBOutlet UITableView *inventoryView;
 @property (weak, nonatomic) IBOutlet UIButton *setButtonHidden;
 @property (strong, nonatomic) IBOutlet UIButton *getCreature;
+@property (strong, nonatomic) IBOutlet UILabel *playerHp;
+@property (strong, nonatomic) IBOutlet UILabel *monsterHp;
 
 @property (strong, nonatomic) Creatures * monster;
 @end
 
 @implementation betaDetroitViewController
+
+
+-(UILabel *)monsterHp{
+    if (!_monsterHp) {
+        _monsterHp = [[UILabel alloc]init];
+    }
+    return _monsterHp;
+}
+
+-(UILabel *)playerHp {
+    if(!_playerHp){
+        _playerHp =[[UILabel alloc]init];
+    }
+    return _playerHp;
+}
 
 - (Creatures *)monster {
     if (!_monster){
@@ -67,10 +84,12 @@
     [self.monster listStats];
     [_playerSlot1 setImage:[UIImage imageNamed:@"knight-03.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [self.playerHp setText:[NSString stringWithFormat:@"%lu/%lu",self.player.healthPoints, self.player.maxHealthPoints]];
+    [self.monsterHp setText:[NSString stringWithFormat:@"%lu/%lu",self.monster.healthPoints, self.monster.maxHealthPoints]];
     //[self disableClassButtons];
     [self setButtonHidden];
-    
     }
+
 - (IBAction)mageChoice:(id)sender {
     [self.player generateMage];
     [self.monster generateRandomMonster];
@@ -79,6 +98,8 @@
     [self.monster listStats];
     [_playerSlot1 setImage:[UIImage imageNamed:@"wizard.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [self.playerHp setText:[NSString stringWithFormat:@"%lu/%lu",self.player.healthPoints, self.player.maxHealthPoints]];
+    [self.monsterHp setText:[NSString stringWithFormat:@"%lu/%lu",self.monster.healthPoints, self.monster.maxHealthPoints]];
     [self setButtonHidden];
 
 }
@@ -91,6 +112,8 @@
     [self.monster listStats];
     [_playerSlot1 setImage:[UIImage imageNamed:@"rogue.png"]];
     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [self.playerHp setText:[NSString stringWithFormat:@"%lu/%lu",self.player.healthPoints, self.player.maxHealthPoints]];
+    [self.monsterHp setText:[NSString stringWithFormat:@"%lu/%lu",self.monster.healthPoints, self.monster.maxHealthPoints]];
     [self setButtonHidden];
 }
 
@@ -98,26 +121,37 @@
 - (IBAction)attackButton:(UIButton *)sender {
     [self.player encounterExperience:self.monster];
     [self.player attack:self.monster];
+    if (self.monster.healthPoints >0) {
+         [self.monster attack:self.player];
+    }
     [self.monster listStats];
-    NSLog(@"Monster health points: %lu", self.monster.healthPoints);
+    [self.monsterHp setText:[NSString stringWithFormat:@"%lu/%lu",self.monster.healthPoints, self.monster.maxHealthPoints]];
+    [self.playerHp setText:[NSString stringWithFormat:@"%lu/%lu",self.player.healthPoints, self.player.maxHealthPoints]];
+    NSLog(@"Monster health points: %lu/%lu", self.monster.healthPoints,self.monster.maxHealthPoints);
+    NSLog(@"Player health points: %lu/%lu", self.player.healthPoints, self.player.maxHealthPoints);
     if (self.monster.healthPoints == 0) {
         [self.player levelUp];
+        [self.monsterHp setText:@""];
         [_enemySlot1 setImage:nil];
         [_getCreature setHidden:FALSE];
     }
     
 }
+
 - (IBAction)getCreature:(id)sender {
     [self.player listStats];
     NSLog(@"EXP:%lu Level:%lu", self.player.experiencePoints, self.player.level);
     [self.monster generateRandomMonster];
     [self.player CompensateLevel:self.monster];
-     [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
+    [self.monster listStats];
+    [self.monsterHp setText:[NSString stringWithFormat:@"%lu/%lu",self.monster.healthPoints, self.monster.maxHealthPoints]];
+    [_enemySlot1 setImage:[UIImage imageNamed:@"waterSprite.png"]];
     [sender setHidden:TRUE];
 }
 
 - (IBAction)healButton:(UIButton *)sender {
 }
+
 - (IBAction)inventoryButton:(UIButton *)sender {
     Potion * healthPot = [[Potion alloc] initPotionType:Health ofSize:Minor];
     Potion * manaPot = [[Potion alloc] initPotionType:Mana ofSize:Lesser];
@@ -129,9 +163,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    /*Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
-    Sword * sword1 = [[Sword alloc] init];
-    Sword * sword2 = [[Sword alloc] init];
+    [self testSwords];
+    
+//view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) testPotions{
+    Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
 
     Unit * war = [[Unit alloc] initWarriorWithStats:@"WArrior"] ;
     //Unit * monster = [[Unit alloc] initRogueWithStats:@"Monster"];
@@ -153,9 +197,8 @@
     
     
     NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
-    */
     
-//view, typically from a nib.
+    
 }
 -(void)testSwords {
     
@@ -180,6 +223,7 @@
     
     
 }
+
 
 
 

@@ -35,172 +35,95 @@
     if(_level == 0){
         if(_experiencePoints >= 400)
         {
-            if (_warrior) {
-                self.healthPoints = self.healthPoints + (arc4random()%(75-50))+50;
-                self.maxHealthPoints = self.healthPoints;
-                self.manaPoints = self.manaPoints + (arc4random()%(15-8))+8;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-3))+3;
-                self.defensePower = self.defensePower +(arc4random()%(3-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(4-2))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(5-3))+3;
-            } else if (_mage) {
-                self.healthPoints = self.healthPoints + (arc4random()%(40-20))+20;
-                self.manaPoints = self.manaPoints + (arc4random()%(50-30))+30;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(3-1))+1;
-                self.defensePower = self.defensePower +(arc4random()%(2-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-3))+3;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-5))+5;
-            }else{
-                self.healthPoints = self.healthPoints + (arc4random()%(55-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(25-15))+15;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-4))+4;
-                self.defensePower = self.defensePower +(arc4random()%(4-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-1))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-1))+1;
-                
-            }
+            long lowEnd = 10;
+            long highEnd = 15;
+            double perGrowth = (arc4random()%(highEnd-lowEnd))+lowEnd;
+           
+            self.maxHealthPoints = self.maxHealthPoints + (self.maxHealthPoints * (perGrowth/100));
+            self.healthPoints = self.maxHealthPoints;
+            self.maxManaPoints = self.maxManaPoints + (self.maxManaPoints *(perGrowth/100));
+            self.manaPoints = self.maxManaPoints;
+            self.attackPower = self.attackPower +(self.attackPower*(perGrowth/100));
+            self.defensePower = self.defensePower +(self.defensePower*(perGrowth/100));
+            self.magicPower = self.magicPower + (self.magicPower *(perGrowth/100));
+            self.magicDefense = self.magicDefense +(self.magicDefense*(perGrowth/100));
+            
             _level++;
         }
     } else if (_level == 1) {
-        if (_experiencePoints >= 900) {
-            if (_warrior) {
-                self.healthPoints = self.healthPoints + (arc4random()%(75-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(15-8))+8;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-3))+3;
-                self.defensePower = self.defensePower +(arc4random()%(3-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(4-2))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(5-3))+3;
-            } else if (_mage) {
-                self.healthPoints = self.healthPoints + (arc4random()%(40-20))+20;
-                self.manaPoints = self.manaPoints + (arc4random()%(50-30))+30;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(3-1))+1;
-                self.defensePower = self.defensePower +(arc4random()%(2-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-3))+3;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-5))+5;
-            }else{
-                self.healthPoints = self.healthPoints + (arc4random()%(55-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(25-15))+15;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-4))+4;
-                self.defensePower = self.defensePower +(arc4random()%(4-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-1))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-1))+1;
-            }
-            _level++;
+        if (_experiencePoints >= 1900) {
+            long lowEnd = 11;
+            long highEnd = 15;
+            double perGrowth = (arc4random()%(highEnd-lowEnd))+lowEnd;
+            
+            self.maxHealthPoints = self.maxHealthPoints + (self.maxHealthPoints * (perGrowth/100));
+            self.healthPoints = self.maxHealthPoints;
+            self.maxManaPoints = self.maxManaPoints + (self.maxManaPoints *(perGrowth/100));
+            self.manaPoints = self.maxManaPoints;
+            self.attackPower = self.attackPower +(self.attackPower*(perGrowth/100));
+            self.defensePower = self.defensePower +(self.defensePower*(perGrowth/100));
+            self.magicPower = self.magicPower + (self.magicPower *(perGrowth/100));
+            self.magicDefense = self.magicDefense +(self.magicDefense*(perGrowth/100));
+         _level++;
         }
     } else if (_level == 2) {
-        if (_experiencePoints >= 1500) {
-            if (_warrior) {
-                self.healthPoints = self.healthPoints + (arc4random()%(75-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(15-8))+8;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-3))+3;
-                self.defensePower = self.defensePower +(arc4random()%(3-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(4-2))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(5-3))+3;
-            } else if (_mage) {
-                self.healthPoints = self.healthPoints + (arc4random()%(40-20))+20;
-                self.manaPoints = self.manaPoints + (arc4random()%(50-30))+30;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(3-1))+1;
-                self.defensePower = self.defensePower +(arc4random()%(2-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-3))+3;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-5))+5;
-            }else{
-                self.healthPoints = self.healthPoints + (arc4random()%(55-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(25-15))+15;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-4))+4;
-                self.defensePower = self.defensePower +(arc4random()%(4-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-1))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-1))+1;
-            }
-            _level++;
+        if (_experiencePoints >= 3500) {
+            long lowEnd = 15;
+            long highEnd = 18;
+            double perGrowth = (arc4random()%(highEnd-lowEnd))+lowEnd;
+            
+            self.maxHealthPoints = self.maxHealthPoints + (self.maxHealthPoints * (perGrowth/100));
+            self.healthPoints = self.maxHealthPoints;
+            self.maxManaPoints = self.maxManaPoints + (self.maxManaPoints *(perGrowth/100));
+            self.manaPoints = self.maxManaPoints;
+            self.attackPower = self.attackPower +(self.attackPower*(perGrowth/100));
+            self.defensePower = self.defensePower +(self.defensePower*(perGrowth/100));
+            self.magicPower = self.magicPower + (self.magicPower *(perGrowth/100));
+            self.magicDefense = self.magicDefense +(self.magicDefense*(perGrowth/100));
+              _level++;
         }
     } else if (_level == 3) {
-        if (_experiencePoints >= 2200) {
-            if (_warrior) {
-                self.healthPoints = self.healthPoints + (arc4random()%(75-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(15-8))+8;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-3))+3;
-                self.defensePower = self.defensePower +(arc4random()%(3-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(4-2))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(5-3))+3;
-            } else if (_mage) {
-                self.healthPoints = self.healthPoints + (arc4random()%(40-20))+20;
-                self.manaPoints = self.manaPoints + (arc4random()%(50-30))+30;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(3-1))+1;
-                self.defensePower = self.defensePower +(arc4random()%(2-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-3))+3;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-5))+5;
-            }else{
-                self.healthPoints = self.healthPoints + (arc4random()%(55-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(25-15))+15;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-4))+4;
-                self.defensePower = self.defensePower +(arc4random()%(4-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-1))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-1))+1;
-            }
-            _level++;
-        }
-    } else if (_level == 4) {
-        if (_experiencePoints >= 3000) {
-            if (_warrior) {
-                self.healthPoints = self.healthPoints + (arc4random()%(75-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(15-8))+8;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-3))+3;
-                self.defensePower = self.defensePower +(arc4random()%(3-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(4-2))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(5-3))+3;
-            } else if (_mage) {
-                self.healthPoints = self.healthPoints + (arc4random()%(40-20))+20;
-                self.manaPoints = self.manaPoints + (arc4random()%(50-30))+30;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(3-1))+1;
-                self.defensePower = self.defensePower +(arc4random()%(2-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-3))+3;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-5))+5;
-            }else{
-                self.healthPoints = self.healthPoints + (arc4random()%(55-50))+50;
-                self.manaPoints = self.manaPoints + (arc4random()%(25-15))+15;
-                self.maxHealthPoints = self.healthPoints;
-                self.maxManaPoints = self.manaPoints;
-                self.attackPower = self.attackPower +(arc4random()%(5-4))+4;
-                self.defensePower = self.defensePower +(arc4random()%(4-1))+1;
-                self.magicPower = self.magicPower + (arc4random()%(5-1))+1;
-                self.magicDefense = self.magicDefense +(arc4random()%(7-1))+1;
-            }
-            _level++;
+        if (_experiencePoints >= 6200) {
+            long lowEnd = 12;
+            long highEnd = 16;
+            double perGrowth = (arc4random()%(highEnd-lowEnd))+lowEnd;
+            
+            self.maxHealthPoints = self.maxHealthPoints + (self.maxHealthPoints * (perGrowth/100));
+            self.healthPoints = self.maxHealthPoints;
+            self.maxManaPoints = self.maxManaPoints + (self.maxManaPoints *(perGrowth/100));
+            self.manaPoints = self.maxManaPoints;
+            self.attackPower = self.attackPower +(self.attackPower*(perGrowth/100));
+            self.defensePower = self.defensePower +(self.defensePower*(perGrowth/100));
+            self.magicPower = self.magicPower + (self.magicPower *(perGrowth/100));
+            self.magicDefense = self.magicDefense +(self.magicDefense*(perGrowth/100));
+        _level++;
         }
         
+    } else if (_level == 4) {
+        if (_experiencePoints >= 13000) {
+            long lowEnd = 15;
+            long highEnd = 18;
+            double perGrowth = (arc4random()%(highEnd-lowEnd))+lowEnd;
+            
+            self.maxHealthPoints = self.maxHealthPoints + (self.maxHealthPoints * (perGrowth/100));
+            self.healthPoints = self.maxHealthPoints;
+            self.maxManaPoints = self.maxManaPoints + (self.maxManaPoints *(perGrowth/100));
+            self.manaPoints = self.maxManaPoints;
+            self.attackPower = self.attackPower +(self.attackPower*(perGrowth/100));
+            self.defensePower = self.defensePower +(self.defensePower*(perGrowth/100));
+            self.magicPower = self.magicPower + (self.magicPower *(perGrowth/100));
+            self.magicDefense = self.magicDefense +(self.magicDefense*(perGrowth/100));
+           _level++;
+        }
     }
+    
 }
+
 
 -(void)CompensateLevel:(Unit *)target
 {
     if (self.level == 0) {
+        target.maxHealthPoints = target.maxHealthPoints -(target.maxHealthPoints*0.75);
         target.healthPoints = target.healthPoints - (target.healthPoints*0.75);
         target.manaPoints = target.manaPoints - (target.manaPoints*0.75);
         target.attackPower = target.attackPower - (target.attackPower*0.75);
@@ -208,7 +131,7 @@
         target.magicPower = target.magicPower - (target.magicPower *0.75);
         target.magicDefense = target.magicDefense - (target.magicDefense*0.75);
     } else if ( self.level ==1) {
-        
+        target.maxHealthPoints = target.maxHealthPoints -(target.maxHealthPoints*0.50);
         target.healthPoints = target.healthPoints - (target.healthPoints*0.50);
         target.manaPoints = target.manaPoints - (target.manaPoints*0.50);
         target.attackPower = target.attackPower - (target.attackPower*0.50);
@@ -216,23 +139,26 @@
         target.magicPower = target.magicPower - (target.magicPower *0.50);
         target.magicDefense = target.magicDefense - (target.magicDefense*0.50);
     } else if (self.level == 2){
-        target.healthPoints = target.healthPoints - (target.healthPoints*0.10);
-        target.manaPoints = target.manaPoints - (target.manaPoints*0.10);
-        target.attackPower = target.attackPower - (target.attackPower*0.10);
-        target.defensePower = target.defensePower - (target.defensePower*0.50);
-        target.magicPower = target.magicPower - (target.magicPower *0.10);
-        target.magicDefense = target.magicDefense - (target.magicDefense*0.10);
+        target.maxHealthPoints = target.maxHealthPoints -(target.maxHealthPoints*0.25);
+        target.healthPoints = target.healthPoints - (target.healthPoints*0.25);
+        target.manaPoints = target.manaPoints - (target.manaPoints*0.20);
+        target.attackPower = target.attackPower - (target.attackPower*0.20);
+        target.defensePower = target.defensePower - (target.defensePower*0.35);
+        target.magicPower = target.magicPower - (target.magicPower *0.25);
+        target.magicDefense = target.magicDefense - (target.magicDefense*0.35);
         
         
     } else if (self.level == 3){
+        target.maxHealthPoints = target.maxHealthPoints +(target.maxHealthPoints*0.10);
         target.healthPoints = target.healthPoints + (target.healthPoints*0.10);
         target.manaPoints = target.manaPoints + (target.manaPoints*0.10);
         target.attackPower = target.attackPower + (target.attackPower*0.10);
-        target.defensePower = target.defensePower + (target.defensePower*0.50);
+        target.defensePower = target.defensePower + (target.defensePower*0.10);
         target.magicPower = target.magicPower + (target.magicPower *0.10);
         target.magicDefense = target.magicDefense + (target.magicDefense*0.10);
         
     } else if (self.level == 4) {
+        target.maxHealthPoints = target.maxHealthPoints +(target.maxHealthPoints*0.20);
         target.healthPoints = target.healthPoints + (target.healthPoints*0.20);
         target.manaPoints = target.manaPoints + (target.manaPoints*0.20);
         target.attackPower = target.attackPower + (target.attackPower*0.20);
@@ -241,6 +167,7 @@
         target.magicDefense = target.magicDefense + (target.magicDefense*0.20);
         
     } else if (self.level == 5) {
+        target.maxHealthPoints = target.maxHealthPoints +(target.maxHealthPoints*0.25);
         target.healthPoints = target.healthPoints + (target.healthPoints*0.25);
         target.manaPoints = target.manaPoints + (target.manaPoints*0.25);
         target.attackPower = target.attackPower + (target.attackPower*0.25);
@@ -248,6 +175,7 @@
         target.magicPower = target.magicPower + (target.magicPower *0.25);
         target.magicDefense = target.magicDefense + (target.magicDefense*0.25);
     } else {
+        target.maxHealthPoints = target.maxHealthPoints*(self.level-4);
         target.healthPoints = target.healthPoints *(self.level -4);
         target.manaPoints = target.manaPoints *(self.level -4);
         target.attackPower = target.attackPower *(self.level -4);
@@ -269,6 +197,11 @@
     }
 }
 
+-(void)encounterExperience:(Unit *)f
+{
+    
+    self.experiencePoints = self.experiencePoints +(f.healthPoints + f.manaPoints + f.attackPower + f.defensePower + f.magicDefense + f.magicPower)/2.25;
+}
 
 
 - (id)initWarriorWithStats:(NSString*)name; {
@@ -306,11 +239,7 @@
     return self;
 }
 
--(void)encounterExperience:(Unit *)f
-{
-    
-    self.experiencePoints = self.experiencePoints +(f.healthPoints + f.manaPoints + f.attackPower + f.defensePower + f.magicDefense + f.magicPower)/2.25;
-}
+
 
 - (id)initMageWithStats:(NSString*)name
 {
@@ -418,8 +347,8 @@
 
 -(void)generateMage;
 {
-    long minMana = 80;
-    long maxMana = 100;
+    long minMana = 110;
+    long maxMana = 140;
     long randomMana = (arc4random()%(maxMana-minMana))+minMana;
     
     long minHp = 100;
@@ -439,7 +368,7 @@
     long randomMagA = (arc4random()%(maxMagA - minMagA))+minMagA;
     
     long minMr = 40;
-    long maxMr = 50;
+    long maxMr = 55;
     long randomMr = (arc4random()%(maxMr -minMr))+minMr;
     
     [self setUnitStatsHealth:randomHp Mana:randomMana AttackPower:randomAtk Defense:randomDef MagicPwr:randomMagA MagicResist:randomMr EXP:0 Level:0];
@@ -449,8 +378,8 @@
 
 -(void)generateRogue;
 {
-    long minMana = 80;
-    long maxMana = 100;
+    long minMana = 60;
+    long maxMana = 80;
     long randomMana = (arc4random()%(maxMana-minMana))+minMana;
     
     long minHp = 130;
