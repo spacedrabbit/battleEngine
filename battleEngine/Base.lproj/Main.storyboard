@@ -115,6 +115,19 @@
                                     <action selector="getCreature:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="COT-Vi-Gv5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYp-Am-Uk5">
+                                <rect key="frame" x="35" y="368" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBh-wk-kGu">
+                                <rect key="frame" x="195" y="368" width="97" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -123,9 +136,10 @@
                         <outlet property="combatTextBox" destination="v3X-wN-lHc" id="fvh-7r-1fd"/>
                         <outlet property="enemySlot1" destination="950-n4-wU0" id="lbK-u3-7P5"/>
                         <outlet property="getCreature" destination="lBt-yv-EGz" id="EHT-hH-27d"/>
-                        <outlet property="healButton" destination="WPl-tm-GIA" id="SEa-fR-Nv0"/>
                         <outlet property="inventoryButton" destination="Ia7-cR-QfD" id="C1M-5t-Jf4"/>
                         <outlet property="mageChoice" destination="wnI-GD-wlA" id="AM9-Ve-zxM"/>
+                        <outlet property="monsterHp" destination="YBh-wk-kGu" id="5uZ-Sx-r1o"/>
+                        <outlet property="playerHp" destination="KYp-Am-Uk5" id="UGJ-fJ-E6h"/>
                         <outlet property="playerSlot1" destination="fh0-K3-4uu" id="452-Dc-acV"/>
                         <outlet property="rogueChoice" destination="hqq-7c-Wnt" id="O3D-Rc-6v6"/>
                         <outlet property="unitSlot1" destination="fh0-K3-4uu" id="gjX-6o-9am"/>
