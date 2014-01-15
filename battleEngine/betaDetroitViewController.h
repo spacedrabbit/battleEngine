@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MonstersNPC.h"
+#import "inventoryViewController.h"
 
-
-@interface betaDetroitViewController : UIViewController
+@interface betaDetroitViewController : UIViewController <inventoryViewControllerDelegate>
 
 @end

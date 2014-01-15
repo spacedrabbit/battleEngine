@@ -75,7 +75,7 @@
 {
     int missChance = arc4random()%100+1;
     if (missChance > 20) {
-        int critMultiplier = arc4random()%5 + self.level;
+        long critMultiplier = arc4random()%5 + self.level;
         f.healthPoints = f.healthPoints - (self.attackPower/2) * critMultiplier;
         NSLog(@"You backstab your opponent dealing %lu damage",(self.attackPower/2) * critMultiplier);
     } else {

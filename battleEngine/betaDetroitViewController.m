@@ -142,6 +142,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**********************************************************
+ 
+ 
+ 
+ View Controll Change Methods
+ 
+ 
+ 
+ **********************************************************/
+
+- (void)inventoryViewControllerDidFinish:(inventoryViewController *)controller{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([[segue identifier] isEqualToString:@"toInventory"]) {
+        [[segue destinationViewController] setDelegate:self];
+    }
+}
+
+/**********************************************************
+ 
+      
+ 
+                Inventory Test Methods - Louis
+ 
+ 
+ 
+ **********************************************************/
+
 -(void)testPotions{
     Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
 
@@ -165,7 +196,6 @@
     
     
     NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
-    */
     
     [SysAlerts notEnoughGold:100 forThis:200];
     
