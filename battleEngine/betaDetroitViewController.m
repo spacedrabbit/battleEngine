@@ -35,11 +35,19 @@
 @property (strong, nonatomic) IBOutlet UIButton *getCreature;
 @property (strong, nonatomic) IBOutlet UILabel *playerHp;
 @property (strong, nonatomic) IBOutlet UILabel *monsterHp;
+@property (strong, nonatomic) Container * playerBag;
 
 @property (strong, nonatomic) Creatures * monster;
 @end
 
 @implementation betaDetroitViewController
+
+-(Container *) playerBag {
+    if (_playerBag == nil) {
+        _playerBag = [[Container alloc] initBagWith:1 withSlots:6];
+    }
+    return _playerBag;
+}
 
 
 -(UILabel *)monsterHp{
@@ -171,11 +179,12 @@
 }
 
 - (IBAction)inventoryButton:(UIButton *)sender {
+    /*
     Potion * healthPot = [[Potion alloc] initPotionType:Health ofSize:Minor];
     Potion * manaPot = [[Potion alloc] initPotionType:Mana ofSize:Lesser];
     NSLog(@"Mana Pot: %@", manaPot.name);
     NSLog(@"Health Pot: %@", healthPot.name);
-    self.combatTextBox.text = [NSString stringWithFormat:@"%@\n %@", healthPot.name, manaPot.name];
+    self.combatTextBox.text = [NSString stringWithFormat:@"%@\n %@", healthPot.name, manaPot.name];*/
 }
 
 - (void)viewDidLoad
@@ -196,7 +205,7 @@
  
  
  
- View Controll Change Methods
+ View Controller Change Methods
  
  
  
@@ -210,6 +219,7 @@
     
     if ([[segue identifier] isEqualToString:@"toInventory"]) {
         [[segue destinationViewController] setDelegate:self];
+        [[segue destinationViewController] currentBag:self.playerBag];
     }
 }
 
@@ -254,21 +264,22 @@
     NSArray * stats = [NSArray arrayWithObjects:@25, @0, @0, @0, @1.23, nil];
     NSArray * stats2 = [NSArray arrayWithObjects:@100, @0, @20, @0, @3.13, nil];
     NSArray * stats3 = [NSArray arrayWithObjects:@1250, @0, @120, @40, @0.0, nil];
-    Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
+    //Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
     
     Sword * sword1 = [[Sword alloc] initWeaponType:sword inSlots:weapon1Slot withStats:stats withAttackRange:NSMakeRange(25, 10) andMagicRange:NSMakeRange(0, 0)];
-    NSLog(@"Stats: \n %@", [sword1 swordStats]);
+    //NSLog(@"Stats: \n %@", [sword1 swordStats]);
     
     Sword * sword2 = [[Sword alloc] initWeaponType:hammer inSlots:weapon1And2slot withStats:stats2 withAttackRange:NSMakeRange(20, 35) andMagicRange:NSMakeRange(0, 0)];
-    NSLog(@"Stats: \n %@", [sword2 swordStats]);
+    //NSLog(@"Stats: \n %@", [sword2 swordStats]);
     
     Sword * sword3 = [[Sword alloc] initWeaponType:shield inSlots:weapon2Slot withStats:stats3 withAttackRange:NSMakeRange(0, 0) andMagicRange:NSMakeRange(0, 0)];
-    NSLog(@"Stats: \n %@", [sword3 swordStats]);
+    //NSLog(@"Stats: \n %@", [sword3 swordStats]);
     
-    [playerBag addItemToBag:sword1];
-    [playerBag addItemToBag:sword2];
-    [playerBag addItemToBag:sword3];
-    self.combatTextBox.text = [playerBag displayBag];
+    [self.playerBag addItemToBag:sword1];
+    [self.playerBag addItemToBag:sword2];
+    [self.playerBag addItemToBag:sword3];
+    //self.combatTextBox.text = [playerBag displayBag];
+    NSLog(@"\n%@", [self.playerBag displayBag]);
     
     
 }

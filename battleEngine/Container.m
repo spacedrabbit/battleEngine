@@ -65,4 +65,15 @@
     return bagContains;
 }
 
+- (NSArray *)arrayOfBagContents{
+    
+    // needs to return a string array, or needs descriptor methods for items classes to NSLog it
+    return nil;
+}
+
+
+-(Container *)getBag{
+    return self;
+}
+
 @end

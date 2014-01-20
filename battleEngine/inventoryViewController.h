@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class inventoryViewController;
+@class inventoryViewController, Container;
 
 @protocol inventoryViewControllerDelegate
 
@@ -16,8 +16,11 @@
 
 @end
 
-@interface inventoryViewController : UIViewController
+@interface inventoryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) id <inventoryViewControllerDelegate> delegate;
+@property (strong, nonatomic) Container * playerBag;
+
+- (void) currentBag: (Container*) bagToDisplay;
 
 @end
