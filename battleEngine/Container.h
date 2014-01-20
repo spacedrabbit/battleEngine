@@ -20,4 +20,7 @@
 - (BOOL) addItemToBag: (Item *) item;
 - (NSString *) displayBag;
 
+- (Container *)getBag;
+- (NSArray *) arrayOfBagContents;
+
 @end
