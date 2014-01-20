@@ -81,4 +81,6 @@ typedef struct _potionSizes {
 + (NSArray *) type;
 + (NSArray *) equipmentStats;
 
+- (NSString *)description;
+
 @end

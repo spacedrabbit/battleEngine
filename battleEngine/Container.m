@@ -68,7 +68,12 @@
 - (NSArray *)arrayOfBagContents{
     
     // needs to return a string array, or needs descriptor methods for items classes to NSLog it
-    return nil;
+    NSMutableArray * contents = [NSMutableArray array];
+    for(Item * item in self.bagContents){
+        [contents addObject:item.name];
+    }
+    
+    return contents;
 }
 
 

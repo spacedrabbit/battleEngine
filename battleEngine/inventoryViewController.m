@@ -63,8 +63,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inventoryCell"];
     
     NSArray * contents = [self.playerBag arrayOfBagContents];
-    //cell.textLabel.text = @"This is a cell";
-    // needs to populate cells with text of container objects
+    cell.textLabel.text = contents[indexPath.row];
 
     return cell;
 }

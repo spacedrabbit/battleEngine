@@ -45,5 +45,8 @@
 + (NSArray *)equipmentStats {
     return @[@"Health Points", @"Mana Points", @"Physical Damage", @"Magic Damage", @"Magic Resist", @"Physical Resist", @"Speed"];
 }
+-(NSString *)description{
+    return [NSString stringWithString:_name];
+}
 
 @end
