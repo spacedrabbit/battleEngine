@@ -19,8 +19,11 @@
 @property (nonatomic) NSInteger turnNumber;
 @property (nonatomic, strong) Container * randomDrop;
 @property (nonatomic, strong) Unit * randomCreature;
+@property (nonatomic, strong) Unit * player;
+@property (nonatomic, strong) Unit * creature;
 
 - (void) beginEncounterBetween: (Unit *) player and: (Unit *) creature;
 - (Container *) generateLoot;
+-(void) basicAttackOn;
 
 @end

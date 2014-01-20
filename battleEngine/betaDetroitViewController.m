@@ -13,8 +13,10 @@
 #import "Skills.h"
 #import "Creatures.h"
 #import "SysAlerts.h"
+#import "Encounter.h"
 
 @interface betaDetroitViewController ()
+@property (strong, nonatomic) Encounter * turn;
 @property (strong, nonatomic) IBOutlet UIButton *attackButton;
 @property (strong, nonatomic) IBOutlet UIButton *healButton;
 @property (strong, nonatomic) IBOutlet UIButton *inventoryButton;
@@ -54,6 +56,13 @@
     return _playerHp;
 }
 
+- (Encounter *)turn {
+    if (!_turn) {
+        _turn = [[Encounter alloc]init];
+    }
+    return _turn;
+    }
+
 - (Creatures *)monster {
     if (!_monster){
         _monster = [[Creatures alloc]init];
@@ -80,6 +89,9 @@
 - (IBAction)warriorChoice:(id)sender {
     [self.player generateWarrior];
     [self.monster generateRandomMonster];
+    
+    [self.turn beginEncounterBetween:self.player and:self.monster];
+    
     [self.player CompensateLevel:self.monster];
     [self.player listStats];
     [self.monster listStats];
@@ -89,6 +101,7 @@
     [self.monsterHp setText:[NSString stringWithFormat:@"%lu/%lu",self.monster.healthPoints, self.monster.maxHealthPoints]];
     //[self disableClassButtons];
     [self setButtonHidden];
+    
     }
 
 - (IBAction)mageChoice:(id)sender {
@@ -120,6 +133,10 @@
 
 
 - (IBAction)attackButton:(UIButton *)sender {
+    
+    [self.turn basicAttackOn];
+    
+    /*
     [self.player encounterExperience:self.monster];
     [self.player attack:self.monster];
     if (self.monster.healthPoints >0) {
@@ -136,7 +153,7 @@
         [_enemySlot1 setImage:nil];
         [_getCreature setHidden:FALSE];
     }
-    
+   */
 }
 
 - (IBAction)getCreature:(id)sender {
