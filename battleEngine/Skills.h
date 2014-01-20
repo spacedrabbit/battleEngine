@@ -21,6 +21,16 @@
 -(void)dirtyTrick:(Unit *)f;
 -(void)backstab:(Unit *)f;
 
+/*
+ // test
+ Skills *player = [[Skills alloc]init];
+ [player setUnitStatsHealth:250 Mana:100 AttackPower:40 Defense:60 MagicPwr:60 MagicResist:50 EXP:5 Level:2 ];
+ 
+ Creatures *monster = [[Creatures alloc]init];
+ [monster setUnitStatsHealth:250 Mana:100 AttackPower:40 Defense:30 MagicPwr:60 MagicResist:30 EXP:5 Level:2];
+ 
+ [player disarm:monster];
+*/
 
 @end
 
