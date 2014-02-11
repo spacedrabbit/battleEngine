@@ -190,6 +190,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self testPotions];
     [self testSwords];
     
 //view, typically from a nib.
@@ -234,29 +235,12 @@
  **********************************************************/
 
 -(void)testPotions{
-    Container * playerBag = [[Container alloc] initBagWith:1 withSlots:6];
-
-    Unit * war = [[Unit alloc] initWarriorWithStats:@"WArrior"] ;
-    //Unit * monster = [[Unit alloc] initRogueWithStats:@"Monster"];
     
     Potion * healthPot = [[Potion alloc] initPotionType:Health ofSize:Lesser];
     Potion * manaPot = [[Potion alloc] initPotionType:Mana ofSize:Titan];
-    [playerBag addItemToBag:healthPot];
-    
-    NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
-    NSLog(@"Warrior takes 100 damage and uses 5 mp");
-    war.healthPoints -= 100;
-    war.manaPoints -= 5;
-    NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
-    
-    [healthPot useItemOn:war];
-    [manaPot useItemOn:war];
-    
-    [playerBag removeItemFromBag:healthPot];
-    
-    
-    NSLog(@"Current HP: %lu  MP:%lu", war.healthPoints, war.manaPoints);
-    
+    [self.playerBag addItemToBag:healthPot];
+    [self.playerBag addItemToBag:manaPot];
+
     
 }
 -(void)testSwords {

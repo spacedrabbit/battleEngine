@@ -25,6 +25,8 @@
         // place code for encounter here
         NSLog(@"%lu", player.healthPoints);
         NSLog(@"%lu", creature.healthPoints);
+        
+        player.healthPoints = 0;
     }
     NSLog(@"encounter done");
         

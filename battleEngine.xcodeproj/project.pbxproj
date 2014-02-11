@@ -12,6 +12,9 @@
 		14566D5F185D60CE000A00A2 /* Sword.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D5E185D60CE000A00A2 /* Sword.m */; };
 		14566D62185D61F3000A00A2 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D61185D61F3000A00A2 /* Container.m */; };
 		14566D65185D92F9000A00A2 /* SysAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 14566D64185D92F9000A00A2 /* SysAlerts.m */; };
+		145ADB57188CDBD800C4B2C3 /* Potion-2-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 145ADB54188CDBD800C4B2C3 /* Potion-2-icon.png */; };
+		145ADB58188CDBD800C4B2C3 /* Potion-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 145ADB55188CDBD800C4B2C3 /* Potion-icon.png */; };
+		145ADB59188CDBD800C4B2C3 /* sword-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 145ADB56188CDBD800C4B2C3 /* sword-icon.png */; };
 		145C16491870E08E005ABE4E /* eMIBL7L.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 145C16481870E08E005ABE4E /* eMIBL7L.jpg */; };
 		14A349941867A09B00A786BE /* Equipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A349931867A09B00A786BE /* Equipment.m */; };
 		14A349971867EC2500A786BE /* Armor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A349961867EC2400A786BE /* Armor.m */; };
@@ -69,6 +72,9 @@
 		14566D61185D61F3000A00A2 /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Container.m; sourceTree = "<group>"; };
 		14566D63185D92F9000A00A2 /* SysAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysAlerts.h; sourceTree = "<group>"; };
 		14566D64185D92F9000A00A2 /* SysAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysAlerts.m; sourceTree = "<group>"; };
+		145ADB54188CDBD800C4B2C3 /* Potion-2-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Potion-2-icon.png"; path = "../Potion-2-icon.png"; sourceTree = "<group>"; };
+		145ADB55188CDBD800C4B2C3 /* Potion-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Potion-icon.png"; path = "../Potion-icon.png"; sourceTree = "<group>"; };
+		145ADB56188CDBD800C4B2C3 /* sword-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sword-icon.png"; path = "../sword-icon.png"; sourceTree = "<group>"; };
 		145C16481870E08E005ABE4E /* eMIBL7L.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = eMIBL7L.jpg; sourceTree = "<group>"; };
 		14A349921867A09B00A786BE /* Equipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Equipment.h; sourceTree = "<group>"; };
 		14A349931867A09B00A786BE /* Equipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Equipment.m; sourceTree = "<group>"; };
@@ -241,6 +247,9 @@
 		14A3E9BE185D3E6B00B62004 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				145ADB54188CDBD800C4B2C3 /* Potion-2-icon.png */,
+				145ADB55188CDBD800C4B2C3 /* Potion-icon.png */,
+				145ADB56188CDBD800C4B2C3 /* sword-icon.png */,
 				14A3E9D1185D417400B62004 /* text box-iphone copy.png */,
 				14A3E9CF185D3F3C00B62004 /* background-iphone.png */,
 				14A3E9BF185D3E6B00B62004 /* background.png */,
@@ -381,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A3E9D0185D3F3C00B62004 /* background-iphone.png in Resources */,
+				145ADB58188CDBD800C4B2C3 /* Potion-icon.png in Resources */,
 				14A3E9CE185D3E6B00B62004 /* wizard.png in Resources */,
 				14A3E9CD185D3E6B00B62004 /* WaterSprite.png in Resources */,
 				14A3E9CB185D3E6B00B62004 /* text box-03.png in Resources */,
@@ -390,7 +400,9 @@
 				14A3E9C8185D3E6B00B62004 /* knight-03.png in Resources */,
 				14A3E9CC185D3E6B00B62004 /* treant-03.png in Resources */,
 				14A3E9C7185D3E6B00B62004 /* background.png in Resources */,
+				145ADB59188CDBD800C4B2C3 /* sword-icon.png in Resources */,
 				14A3E994185D26AA00B62004 /* InfoPlist.strings in Resources */,
+				145ADB57188CDBD800C4B2C3 /* Potion-2-icon.png in Resources */,
 				14A3E9CA185D3E6B00B62004 /* rogue.png in Resources */,
 				14A3E9C9185D3E6B00B62004 /* mindflayer.png in Resources */,
 				14A3E99D185D26AA00B62004 /* Main.storyboard in Resources */,
@@ -555,6 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "battleEngine/battleEngine-Prefix.pch";
 				INFOPLIST_FILE = "battleEngine/battleEngine-Info.plist";
@@ -568,6 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "battleEngine/battleEngine-Prefix.pch";
 				INFOPLIST_FILE = "battleEngine/battleEngine-Info.plist";

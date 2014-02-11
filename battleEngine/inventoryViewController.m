@@ -8,6 +8,8 @@
 
 #import "inventoryViewController.h"
 #import "Container.h"
+#import "Sword.h"
+#import "Potion.h"
 
 @interface inventoryViewController ()
 
@@ -55,15 +57,34 @@
  **************************************************************/
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return [[self.playerBag arrayOfBagContents] count];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    //NSLog(@"In the method at least");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inventoryCell"];
     
+    NSArray * bag = [[[self.playerBag getBag] bagContents] allObjects];
     NSArray * contents = [self.playerBag arrayOfBagContents];
+    NSLog(@"%lu", indexPath.row);
     cell.textLabel.text = contents[indexPath.row];
+    id currentItem = [bag objectAtIndex:indexPath.row];
+    
+    //checks to see if it is a sword or potion
+    if ([currentItem isMemberOfClass:[Sword class]]) {
+        cell.imageView.image =  [UIImage imageNamed:@"sword-icon.png"];
+        cell.detailTextLabel.text = @"Deals Damage";
+    }else if ([currentItem isMemberOfClass:[Potion class]]){
+        Potion * pot = currentItem;//basically if it passes the membership test, I know it's a potion, so I give it the proper pointer (so i can access it's properties)
+        if (pot.potionType == Health) {
+            cell.imageView.image =  [UIImage imageNamed:@"potion-2-icon.png"];
+            cell.detailTextLabel.text = @"Heals HP";
+        }else if (pot.potionType == Mana)
+        {
+            cell.imageView.image =  [UIImage imageNamed:@"potion-icon.png"];
+            cell.detailTextLabel.text = @"Replenishes MP";
+        }
+    }
+
 
     return cell;
 }
